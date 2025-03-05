@@ -1,5 +1,4 @@
 from enum import Enum
-from typing import Optional, List
 from pydantic import Field
 import pickle
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
@@ -27,9 +26,7 @@ class DecisionTreeClassifierNode(BaseNode):
 
     X_train: NPArray = Field(default=NPArray(), description="Training features")
     y_train: NPArray = Field(default=NPArray(), description="Training target values")
-    max_depth: Optional[int] = Field(
-        default=None, description="Maximum depth of the tree"
-    )
+    max_depth: int = Field(default=None, description="Maximum depth of the tree")
     min_samples_split: int = Field(
         default=2, description="Minimum samples required to split a node"
     )
@@ -40,8 +37,8 @@ class DecisionTreeClassifierNode(BaseNode):
         default=DecisionTreeCriterion.GINI,
         description="Function to measure quality of split ('gini' or 'entropy')",
     )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     @classmethod
@@ -85,9 +82,7 @@ class DecisionTreeRegressorNode(BaseNode):
 
     X_train: NPArray = Field(default=NPArray(), description="Training features")
     y_train: NPArray = Field(default=NPArray(), description="Training target values")
-    max_depth: Optional[int] = Field(
-        default=None, description="Maximum depth of the tree"
-    )
+    max_depth: int = Field(default=None, description="Maximum depth of the tree")
     min_samples_split: int = Field(
         default=2, description="Minimum samples required to split a node"
     )
@@ -98,8 +93,8 @@ class DecisionTreeRegressorNode(BaseNode):
         default=DecisionTreeRegressorCriterion.SQUARED_ERROR,
         description="Function to measure quality of split ('squared_error', 'friedman_mse', 'absolute_error', 'poisson')",
     )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     @classmethod

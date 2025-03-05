@@ -21,8 +21,8 @@ class KMeansNode(BaseNode):
 
     X: NPArray = Field(default=NPArray(), description="Features for clustering")
     n_clusters: int = Field(default=8, description="Number of clusters")
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
     max_iter: int = Field(default=300, description="Maximum number of iterations")
 

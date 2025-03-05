@@ -1,4 +1,3 @@
-from typing import Optional
 from pydantic import Field
 import pickle
 from sklearn.svm import SVC, SVR, LinearSVC
@@ -26,12 +25,12 @@ class SVMClassifierNode(BaseNode):
         description="Kernel type: 'linear', 'poly', 'rbf', 'sigmoid'",
     )
     degree: int = Field(default=3, description="Degree of polynomial kernel function")
-    gamma: str = Field(
+    gamma: float = Field(
         default="scale",
         description="Kernel coefficient for 'rbf', 'poly' and 'sigmoid'",
     )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     @classmethod
@@ -41,9 +40,10 @@ class SVMClassifierNode(BaseNode):
         }
 
     async def process(self, context: ProcessingContext) -> dict:
+        kernel = ()
         model = SVC(
             C=self.C,
-            kernel=self.kernel,
+            kernel=self.kernel,  # type: ignore
             degree=self.degree,
             gamma=self.gamma,
             random_state=self.random_state,
@@ -67,8 +67,8 @@ class LinearSVMClassifierNode(BaseNode):
     y_train: NPArray = Field(default=NPArray(), description="Training target values")
     C: float = Field(default=1.0, description="Regularization parameter")
     max_iter: int = Field(default=1000, description="Maximum number of iterations")
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     @classmethod
@@ -106,7 +106,7 @@ class SVMRegressorNode(BaseNode):
         description="Kernel type: 'linear', 'poly', 'rbf', 'sigmoid'",
     )
     degree: int = Field(default=3, description="Degree of polynomial kernel function")
-    gamma: str = Field(
+    gamma: float = Field(
         default="scale",
         description="Kernel coefficient for 'rbf', 'poly' and 'sigmoid'",
     )
@@ -121,7 +121,7 @@ class SVMRegressorNode(BaseNode):
     async def process(self, context: ProcessingContext) -> dict:
         model = SVR(
             C=self.C,
-            kernel=self.kernel,
+            kernel=self.kernel,  # type: ignore
             degree=self.degree,
             gamma=self.gamma,
             epsilon=self.epsilon,

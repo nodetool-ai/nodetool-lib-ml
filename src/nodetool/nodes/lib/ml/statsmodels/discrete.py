@@ -1,4 +1,3 @@
-from typing import Optional
 import statsmodels.api as sm
 import pickle
 from pydantic import Field
@@ -61,10 +60,10 @@ class PoissonNode(BaseNode):
 
     X: NPArray = Field(default=NPArray(), description="Features/independent variables")
     y: NPArray = Field(default=NPArray(), description="Count data target variable")
-    exposure: Optional[NPArray] = Field(
-        default=None, description="Optional exposure variable"
+    exposure: NPArray = Field(
+        default=NPArray(), description="Optional exposure variable"
     )
-    offset: Optional[NPArray] = Field(default=None, description="Optional offset term")
+    offset: NPArray = Field(default=NPArray(), description="Optional offset term")
 
     @classmethod
     def return_type(cls):
@@ -81,8 +80,8 @@ class PoissonNode(BaseNode):
         model = sm.Poisson(
             self.y.to_numpy(),
             X,
-            exposure=self.exposure.to_numpy() if self.exposure else None,
-            offset=self.offset.to_numpy() if self.offset else None,
+            exposure=self.exposure.to_numpy() if self.exposure.is_set() else None,
+            offset=self.offset.to_numpy() if self.offset.is_set() else None,
         )
         results = model.fit()
 
@@ -108,10 +107,10 @@ class NegativeBinomialNode(BaseNode):
 
     X: NPArray = Field(default=NPArray(), description="Features/independent variables")
     y: NPArray = Field(default=NPArray(), description="Count data target variable")
-    exposure: Optional[NPArray] = Field(
-        default=None, description="Optional exposure variable"
+    exposure: NPArray = Field(
+        default=NPArray(), description="Optional exposure variable"
     )
-    offset: Optional[NPArray] = Field(default=None, description="Optional offset term")
+    offset: NPArray = Field(default=NPArray(), description="Optional offset term")
 
     @classmethod
     def return_type(cls):
@@ -129,8 +128,8 @@ class NegativeBinomialNode(BaseNode):
         model = sm.NegativeBinomial(
             self.y.to_numpy(),
             X,
-            exposure=self.exposure.to_numpy() if self.exposure else None,
-            offset=self.offset.to_numpy() if self.offset else None,
+            exposure=self.exposure.to_numpy() if self.exposure.is_set() else None,
+            offset=self.offset.to_numpy() if self.offset.is_set() else None,
         )
         results = model.fit()
 

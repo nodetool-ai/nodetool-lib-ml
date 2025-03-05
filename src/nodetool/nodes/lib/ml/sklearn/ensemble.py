@@ -1,5 +1,4 @@
 from enum import Enum
-from typing import Optional, List
 from pydantic import Field
 import pickle
 from sklearn.ensemble import (
@@ -39,9 +38,7 @@ class RandomForestClassifierNode(BaseNode):
     X_train: NPArray = Field(default=NPArray(), description="Training features")
     y_train: NPArray = Field(default=NPArray(), description="Training target values")
     n_estimators: int = Field(default=100, description="Number of trees in the forest")
-    max_depth: Optional[int] = Field(
-        default=None, description="Maximum depth of the trees"
-    )
+    max_depth: int = Field(default=None, description="Maximum depth of the trees")
     min_samples_split: int = Field(
         default=2, description="Minimum samples required to split a node"
     )
@@ -52,8 +49,8 @@ class RandomForestClassifierNode(BaseNode):
         default=RandomForestCriterion.GINI,
         description="Function to measure quality of split ('gini' or 'entropy')",
     )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     @classmethod
@@ -93,9 +90,7 @@ class RandomForestRegressorNode(BaseNode):
     X_train: NPArray = Field(default=NPArray(), description="Training features")
     y_train: NPArray = Field(default=NPArray(), description="Training target values")
     n_estimators: int = Field(default=100, description="Number of trees in the forest")
-    max_depth: Optional[int] = Field(
-        default=None, description="Maximum depth of the trees"
-    )
+    max_depth: int = Field(default=None, description="Maximum depth of the trees")
     min_samples_split: int = Field(
         default=2, description="Minimum samples required to split a node"
     )
@@ -215,8 +210,8 @@ class GradientBoostingRegressorNode(BaseNode):
         default=GradientBoostingLoss.SQUARED_ERROR,
         description="Loss function to be optimized ('squared_error', 'absolute_error', 'huber', 'quantile')",
     )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     @classmethod

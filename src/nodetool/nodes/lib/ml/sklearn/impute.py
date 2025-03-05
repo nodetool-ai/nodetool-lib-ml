@@ -1,4 +1,4 @@
-from typing import Optional, List, Union
+import enum
 from pydantic import Field
 import pickle
 import numpy as np
@@ -24,11 +24,11 @@ class SimpleImputerNode(BaseNode):
         default="mean",
         description="Imputation strategy: 'mean', 'median', 'most_frequent', or 'constant'",
     )
-    fill_value: Optional[Union[str, float]] = Field(
+    fill_value: str | float = Field(
         default=None,
         description="Value to use when strategy is 'constant'. Can be str or numeric",
     )
-    missing_values: Union[str, float] = Field(
+    missing_values: str | float = Field(
         default=np.nan,
         description="Placeholder for missing values. Can be np.nan or numeric value",
     )
@@ -64,20 +64,20 @@ class KNNImputerNode(BaseNode):
     - Handling multiple missing values
     """
 
+    class Weights(str, enum.Enum):
+        UNIFORM = "uniform"
+        DISTANCE = "distance"
+
     X: NPArray = Field(default=NPArray(), description="Input data with missing values")
     n_neighbors: int = Field(
         default=5,
         description="Number of neighboring samples to use for imputation",
     )
-    weights: str = Field(
-        default="uniform",
+    weights: Weights = Field(
+        default=Weights.UNIFORM,
         description="Weight function used in prediction: 'uniform' or 'distance'",
     )
-    metric: str = Field(
-        default="nan_euclidean",
-        description="Distance metric for searching neighbors",
-    )
-    missing_values: Union[str, float] = Field(
+    missing_values: str | float = Field(
         default=np.nan,
         description="Placeholder for missing values. Can be np.nan or numeric value",
     )
@@ -92,8 +92,7 @@ class KNNImputerNode(BaseNode):
     async def process(self, context: ProcessingContext) -> dict:
         imputer = KNNImputer(
             n_neighbors=self.n_neighbors,
-            weights=self.weights,
-            metric=self.metric,
+            weights=self.weights.value,
             missing_values=self.missing_values,
         )
         transformed = imputer.fit_transform(self.X.to_numpy())

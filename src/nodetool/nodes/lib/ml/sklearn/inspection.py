@@ -3,7 +3,6 @@ from sklearn.inspection import DecisionBoundaryDisplay
 from io import BytesIO
 from PIL import Image
 import matplotlib.pyplot as plt
-from typing import Optional, List, Union
 from pydantic import Field
 import pickle
 import numpy as np
@@ -52,8 +51,8 @@ class PartialDependenceNode(BaseNode):
     @classmethod
     def return_type(cls):
         return {
-            "pd_values": List[NPArray],
-            "pd_positions": List[NPArray],
+            "pd_values": list[NPArray],
+            "pd_positions": list[NPArray],
         }
 
     async def process(self, context: ProcessingContext) -> dict:
@@ -99,15 +98,15 @@ class PermutationImportanceNode(BaseNode):
         default=5,
         description="Number of times to permute each feature",
     )
-    random_state: Optional[int] = Field(
-        default=None,
+    random_state: int = Field(
+        default=42,
         description="Random state for reproducibility",
     )
-    scoring: Optional[str] = Field(
-        default=None,
+    scoring: str = Field(
+        default="accuracy",
         description="Scoring metric (if None, uses estimator's default scorer)",
     )
-    n_jobs: Optional[int] = Field(
+    n_jobs: int = Field(
         default=None,
         description="Number of jobs to run in parallel",
     )
@@ -214,7 +213,7 @@ class PartialDependenceDisplayNode(BaseNode):
         default=SKLearnModel(), description="Fitted sklearn model"
     )
     X: NPArray = Field(default=NPArray(), description="Training data")
-    features: tuple[Union[int, tuple[int, int]]] = Field(
+    features: tuple[int | tuple[int, int]] = Field(
         description="Features for which to create PDP. Can be indices for 1D or tuples for 2D"
     )
     feature_names: str = Field(
@@ -241,8 +240,8 @@ class PartialDependenceDisplayNode(BaseNode):
     @classmethod
     def return_type(cls):
         return {
-            "pd_results": List[tuple[NPArray, NPArray]],
-            "feature_names": Optional[List[str]],
+            "pd_results": list[tuple[NPArray, NPArray]],
+            "feature_names": list[str],
         }
 
     async def process(self, context: ProcessingContext) -> ImageRef:

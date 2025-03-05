@@ -1,4 +1,3 @@
-from typing import Optional, List
 from pydantic import Field
 import pickle
 import numpy as np
@@ -43,7 +42,7 @@ class SelectKBestNode(BaseNode):
 
         return {
             "selected_features": NPArray.from_numpy(selected_features),
-            "scores": NPArray.from_numpy(selector.scores_),
+            "scores": NPArray.from_numpy(np.array(selector.scores_)),
             "selected_mask": NPArray.from_numpy(selector.get_support()),
             "model": SKLearnModel(model=pickle.dumps(selector)),
         }
@@ -62,8 +61,10 @@ class RecursiveFeatureEliminationNode(BaseNode):
 
     X: NPArray = Field(default=NPArray(), description="Features to select from")
     y: NPArray = Field(default=NPArray(), description="Target values")
-    estimator: SKLearnModel = Field(description="Base estimator for feature selection")
-    n_features_to_select: Optional[int] = Field(
+    estimator: SKLearnModel = Field(
+        default=SKLearnModel(), description="Base estimator for feature selection"
+    )
+    n_features_to_select: int = Field(
         default=None, description="Number of features to select"
     )
     step: float = Field(
@@ -81,6 +82,7 @@ class RecursiveFeatureEliminationNode(BaseNode):
         }
 
     async def process(self, context: ProcessingContext) -> dict:
+        assert self.estimator.model, "Estimator is not set"
         base_estimator = pickle.loads(self.estimator.model)
         selector = RFE(
             estimator=base_estimator,

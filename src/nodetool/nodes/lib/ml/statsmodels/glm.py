@@ -1,5 +1,4 @@
 from enum import Enum
-from typing import Optional, List
 from pydantic import Field
 import pickle
 import numpy as np
@@ -41,9 +40,7 @@ class GLMNode(BaseNode):
     family: GLMFamily = Field(
         default=GLMFamily.GAUSSIAN, description="Error distribution family"
     )
-    link: Optional[GLMLink] = Field(
-        default=None, description="Link function (if None, uses canonical link)"
-    )
+    link: GLMLink = Field(default=GLMLink.IDENTITY, description="Link function")
     alpha: float = Field(default=0.0, description="L2 regularization parameter")
     max_iter: int = Field(default=100, description="Maximum number of iterations")
 

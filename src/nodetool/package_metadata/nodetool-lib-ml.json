@@ -1,0 +1,6591 @@
+{
+  "name": "nodetool-lib-ml",
+  "description": "Nodetool ML nodes",
+  "version": "0.6.0",
+  "authors": [
+    "Matthias Georgi <matti.georgi@gmail.com>"
+  ],
+  "nodes": [
+    {
+      "title": "Accuracy",
+      "description": "Calculate accuracy score for classification.\n    machine learning, evaluation, metrics, classification\n\n    Use cases:\n    - Model evaluation\n    - Classification accuracy assessment",
+      "namespace": "lib.ml.sklearn.metrics",
+      "node_type": "lib.ml.sklearn.metrics.Accuracy",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "Ground truth labels"
+        },
+        {
+          "name": "y_pred",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Pred",
+          "description": "Predicted labels"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_pred"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Calinski Harabasz",
+      "description": "Calculate Calinski-Harabasz score for clustering.\n    machine learning, evaluation, metrics, clustering\n\n    Use cases:\n    - Cluster separation assessment\n    - Optimal cluster number selection",
+      "namespace": "lib.ml.sklearn.metrics",
+      "node_type": "lib.ml.sklearn.metrics.CalinskiHarabasz",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Input samples"
+        },
+        {
+          "name": "labels",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Labels",
+          "description": "Cluster labels"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "labels"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Confusion Matrix",
+      "description": "Calculate confusion matrix for classification.\n    machine learning, evaluation, metrics, classification\n\n    Use cases:\n    - Detailed classification error analysis\n    - Model performance visualization",
+      "namespace": "lib.ml.sklearn.metrics",
+      "node_type": "lib.ml.sklearn.metrics.ConfusionMatrix",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "Ground truth labels"
+        },
+        {
+          "name": "y_pred",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Pred",
+          "description": "Predicted labels"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_pred"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Davies Bouldin",
+      "description": "Calculate Davies-Bouldin score for clustering.\n    machine learning, evaluation, metrics, clustering\n\n    Use cases:\n    - Cluster quality assessment\n    - Clustering algorithm comparison",
+      "namespace": "lib.ml.sklearn.metrics",
+      "node_type": "lib.ml.sklearn.metrics.DaviesBouldin",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Input samples"
+        },
+        {
+          "name": "labels",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Labels",
+          "description": "Cluster labels"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "labels"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Explained Variance",
+      "description": "Calculate explained variance score for regression.\n    machine learning, evaluation, metrics, regression\n\n    Use cases:\n    - Model quality assessment\n    - Variance explanation evaluation",
+      "namespace": "lib.ml.sklearn.metrics",
+      "node_type": "lib.ml.sklearn.metrics.ExplainedVariance",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "Ground truth values"
+        },
+        {
+          "name": "y_pred",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Pred",
+          "description": "Predicted values"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_pred"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "F 1",
+      "description": "Calculate F1 score for classification.\n    machine learning, evaluation, metrics, classification\n\n    Use cases:\n    - Model evaluation\n    - Balance between precision and recall",
+      "namespace": "lib.ml.sklearn.metrics",
+      "node_type": "lib.ml.sklearn.metrics.F1",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "Ground truth labels"
+        },
+        {
+          "name": "y_pred",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Pred",
+          "description": "Predicted labels"
+        },
+        {
+          "name": "average",
+          "type": {
+            "type": "enum",
+            "values": [
+              "binary",
+              "micro",
+              "macro",
+              "weighted"
+            ],
+            "type_name": "lib.ml.sklearn.metrics.ClassificationMetricsAverage"
+          },
+          "default": "binary",
+          "title": "Average",
+          "description": "Averaging strategy for multiclass: 'binary' (default), 'micro', 'macro', 'weighted'"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_pred",
+        "average"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "MAE",
+      "description": "Calculate Mean Absolute Error for regression.\n    machine learning, evaluation, metrics, regression\n\n    Use cases:\n    - Model evaluation\n    - Average error magnitude assessment",
+      "namespace": "lib.ml.sklearn.metrics",
+      "node_type": "lib.ml.sklearn.metrics.MAE",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "Ground truth values"
+        },
+        {
+          "name": "y_pred",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Pred",
+          "description": "Predicted values"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_pred"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "MSE",
+      "description": "Calculate Mean Squared Error for regression.\n    machine learning, evaluation, metrics, regression\n\n    Use cases:\n    - Model evaluation\n    - Regression error assessment",
+      "namespace": "lib.ml.sklearn.metrics",
+      "node_type": "lib.ml.sklearn.metrics.MSE",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "Ground truth values"
+        },
+        {
+          "name": "y_pred",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Pred",
+          "description": "Predicted values"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_pred"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Precision",
+      "description": "Calculate precision score for classification.\n    machine learning, evaluation, metrics, classification\n\n    Use cases:\n    - Model evaluation\n    - Precision assessment",
+      "namespace": "lib.ml.sklearn.metrics",
+      "node_type": "lib.ml.sklearn.metrics.Precision",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "Ground truth labels"
+        },
+        {
+          "name": "y_pred",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Pred",
+          "description": "Predicted labels"
+        },
+        {
+          "name": "average",
+          "type": {
+            "type": "enum",
+            "values": [
+              "binary",
+              "micro",
+              "macro",
+              "weighted"
+            ],
+            "type_name": "lib.ml.sklearn.metrics.ClassificationMetricsAverage"
+          },
+          "default": "binary",
+          "title": "Average",
+          "description": "Averaging strategy for multiclass: 'binary' (default), 'micro', 'macro', 'weighted'"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_pred",
+        "average"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "R 2",
+      "description": "Calculate R-squared (coefficient of determination) score for regression.\n    machine learning, evaluation, metrics, regression\n\n    Use cases:\n    - Model fit assessment\n    - Variance explanation evaluation",
+      "namespace": "lib.ml.sklearn.metrics",
+      "node_type": "lib.ml.sklearn.metrics.R2",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "Ground truth values"
+        },
+        {
+          "name": "y_pred",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Pred",
+          "description": "Predicted values"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_pred"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "RMSE",
+      "description": "Calculate Root Mean Squared Error for regression.\n    machine learning, evaluation, metrics, regression\n\n    Use cases:\n    - Model evaluation\n    - Error magnitude assessment",
+      "namespace": "lib.ml.sklearn.metrics",
+      "node_type": "lib.ml.sklearn.metrics.RMSE",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "Ground truth values"
+        },
+        {
+          "name": "y_pred",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Pred",
+          "description": "Predicted values"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_pred"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "ROCCurve",
+      "description": "Calculate ROC curve and AUC score.\n    machine learning, evaluation, metrics, classification\n\n    Use cases:\n    - Binary classifier evaluation\n    - Model comparison\n    - Threshold selection",
+      "namespace": "lib.ml.sklearn.metrics",
+      "node_type": "lib.ml.sklearn.metrics.ROCCurve",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "Ground truth labels"
+        },
+        {
+          "name": "y_score",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Score",
+          "description": "Predicted probabilities or scores"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "fpr"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "tpr"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "thresholds"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "auc"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_score"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Recall",
+      "description": "Calculate recall score for classification.\n    machine learning, evaluation, metrics, classification\n\n    Use cases:\n    - Model evaluation\n    - Recall assessment",
+      "namespace": "lib.ml.sklearn.metrics",
+      "node_type": "lib.ml.sklearn.metrics.Recall",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "Ground truth labels"
+        },
+        {
+          "name": "y_pred",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Pred",
+          "description": "Predicted labels"
+        },
+        {
+          "name": "average",
+          "type": {
+            "type": "enum",
+            "values": [
+              "binary",
+              "micro",
+              "macro",
+              "weighted"
+            ],
+            "type_name": "lib.ml.sklearn.metrics.ClassificationMetricsAverage"
+          },
+          "default": "binary",
+          "title": "Average",
+          "description": "Averaging strategy for multiclass: 'binary' (default), 'micro', 'macro', 'weighted'"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_pred",
+        "average"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Silhouette Score",
+      "description": "Calculate Silhouette score for clustering.\n    machine learning, evaluation, metrics, clustering\n\n    Use cases:\n    - Cluster quality assessment\n    - Clustering algorithm evaluation",
+      "namespace": "lib.ml.sklearn.metrics",
+      "node_type": "lib.ml.sklearn.metrics.SilhouetteScore",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Input samples"
+        },
+        {
+          "name": "labels",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Labels",
+          "description": "Cluster labels"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "labels"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Decision Tree Classifier",
+      "description": "Decision Tree Classifier.\n    machine learning, classification, tree\n\n    Use cases:\n    - Classification with interpretable results\n    - Feature importance analysis\n    - Handling both numerical and categorical data",
+      "namespace": "lib.ml.sklearn.tree",
+      "node_type": "lib.ml.sklearn.tree.DecisionTreeClassifier",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "max_depth",
+          "type": {
+            "type": "int"
+          },
+          "title": "Max Depth",
+          "description": "Maximum depth of the tree"
+        },
+        {
+          "name": "min_samples_split",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "Min Samples Split",
+          "description": "Minimum samples required to split a node"
+        },
+        {
+          "name": "min_samples_leaf",
+          "type": {
+            "type": "int"
+          },
+          "default": 1,
+          "title": "Min Samples Leaf",
+          "description": "Minimum samples required at a leaf node"
+        },
+        {
+          "name": "criterion",
+          "type": {
+            "type": "enum",
+            "values": [
+              "gini",
+              "entropy",
+              "log_loss"
+            ],
+            "type_name": "lib.ml.sklearn.tree.DecisionTreeCriterion"
+          },
+          "default": "gini",
+          "title": "Criterion",
+          "description": "Function to measure quality of split ('gini' or 'entropy')"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "feature_importances"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "max_depth",
+        "min_samples_split",
+        "min_samples_leaf",
+        "criterion",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Decision Tree Regressor",
+      "description": "Decision Tree Regressor.\n    machine learning, regression, tree\n\n    Use cases:\n    - Regression with interpretable results\n    - Non-linear relationships\n    - Feature importance analysis",
+      "namespace": "lib.ml.sklearn.tree",
+      "node_type": "lib.ml.sklearn.tree.DecisionTreeRegressor",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "max_depth",
+          "type": {
+            "type": "int"
+          },
+          "title": "Max Depth",
+          "description": "Maximum depth of the tree"
+        },
+        {
+          "name": "min_samples_split",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "Min Samples Split",
+          "description": "Minimum samples required to split a node"
+        },
+        {
+          "name": "min_samples_leaf",
+          "type": {
+            "type": "int"
+          },
+          "default": 1,
+          "title": "Min Samples Leaf",
+          "description": "Minimum samples required at a leaf node"
+        },
+        {
+          "name": "criterion",
+          "type": {
+            "type": "enum",
+            "values": [
+              "squared_error",
+              "absolute_error",
+              "poisson"
+            ],
+            "type_name": "lib.ml.sklearn.tree.DecisionTreeRegressorCriterion"
+          },
+          "default": "squared_error",
+          "title": "Criterion",
+          "description": "Function to measure quality of split ('squared_error', 'friedman_mse', 'absolute_error', 'poisson')"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "feature_importances"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "max_depth",
+        "min_samples_split",
+        "min_samples_leaf",
+        "criterion",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Recursive Feature Elimination",
+      "description": "Feature ranking with recursive feature elimination.\n    machine learning, feature selection, recursive elimination\n\n    Use cases:\n    - Feature ranking\n    - Optimal feature subset selection\n    - Model-based feature selection",
+      "namespace": "lib.ml.sklearn.feature_selection",
+      "node_type": "lib.ml.sklearn.feature_selection.RecursiveFeatureElimination",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features to select from"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Target values"
+        },
+        {
+          "name": "estimator",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "default": {},
+          "title": "Estimator",
+          "description": "Base estimator for feature selection"
+        },
+        {
+          "name": "n_features_to_select",
+          "type": {
+            "type": "int"
+          },
+          "title": "N Features To Select",
+          "description": "Number of features to select"
+        },
+        {
+          "name": "step",
+          "type": {
+            "type": "float"
+          },
+          "default": 1,
+          "title": "Step",
+          "description": "Number of features to remove at each iteration (int) or percentage (float)"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "selected_features"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "ranking"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "selected_mask"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "y",
+        "estimator",
+        "n_features_to_select",
+        "step"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Select KBest",
+      "description": "Select features according to k highest scores.\n    machine learning, feature selection, statistical tests\n\n    Use cases:\n    - Dimensionality reduction\n    - Feature importance ranking\n    - Removing irrelevant features",
+      "namespace": "lib.ml.sklearn.feature_selection",
+      "node_type": "lib.ml.sklearn.feature_selection.SelectKBest",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features to select from"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Target values"
+        },
+        {
+          "name": "k",
+          "type": {
+            "type": "int"
+          },
+          "default": 10,
+          "title": "K",
+          "description": "Number of top features to select"
+        },
+        {
+          "name": "score_func",
+          "type": {
+            "type": "str"
+          },
+          "default": "f_classif",
+          "title": "Score Func",
+          "description": "Scoring function ('f_classif' for classification, 'f_regression' for regression)"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "selected_features"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "scores"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "selected_mask"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "y",
+        "k",
+        "score_func"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Variance Threshold",
+      "description": "Feature selector that removes low-variance features.\n    machine learning, feature selection, variance\n\n    Use cases:\n    - Remove constant features\n    - Remove quasi-constant features\n    - Basic feature filtering",
+      "namespace": "lib.ml.sklearn.feature_selection",
+      "node_type": "lib.ml.sklearn.feature_selection.VarianceThreshold",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features to select from"
+        },
+        {
+          "name": "threshold",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.0,
+          "title": "Threshold",
+          "description": "Features with a variance lower than this threshold will be removed"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "selected_features"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "variances"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "selected_mask"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "threshold"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Transformed Target Regressor",
+      "description": "Meta-estimator to regress on a transformed target.\n    machine learning, regression, target transformation\n\n    Use cases:\n    - Log-transform regression targets\n    - Box-Cox transformations\n    - Custom target transformations",
+      "namespace": "lib.ml.sklearn.compose",
+      "node_type": "lib.ml.sklearn.compose.TransformedTargetRegressor",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "regressor",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "title": "Regressor",
+          "description": "Base regressor"
+        },
+        {
+          "name": "transformer",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "title": "Transformer",
+          "description": "Target transformer"
+        },
+        {
+          "name": "check_inverse",
+          "type": {
+            "type": "bool"
+          },
+          "default": true,
+          "title": "Check Inverse",
+          "description": "Whether to check that transform followed by inverse transform gives original targets"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "regressor",
+        "transformer",
+        "check_inverse"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "KNNClassifier",
+      "description": "K-Nearest Neighbors Classifier.\n    machine learning, classification, neighbors\n\n    Use cases:\n    - Pattern recognition\n    - Classification based on similar examples\n    - Non-parametric classification",
+      "namespace": "lib.ml.sklearn.neighbors",
+      "node_type": "lib.ml.sklearn.neighbors.KNNClassifier",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "n_neighbors",
+          "type": {
+            "type": "int"
+          },
+          "default": 5,
+          "title": "N Neighbors",
+          "description": "Number of neighbors"
+        },
+        {
+          "name": "weights",
+          "type": {
+            "type": "enum",
+            "values": [
+              "uniform",
+              "distance"
+            ],
+            "type_name": "lib.ml.sklearn.neighbors.KNNWeights"
+          },
+          "default": "uniform",
+          "title": "Weights",
+          "description": "Weight function used in prediction ('uniform' or 'distance')"
+        },
+        {
+          "name": "metric",
+          "type": {
+            "type": "enum",
+            "values": [
+              "euclidean",
+              "manhattan",
+              "chebyshev",
+              "minkowski"
+            ],
+            "type_name": "lib.ml.sklearn.neighbors.KNNMetric"
+          },
+          "default": "euclidean",
+          "title": "Metric",
+          "description": "Distance metric to use"
+        },
+        {
+          "name": "p",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "P",
+          "description": "Power parameter for Minkowski metric (p=2 is Euclidean)"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "n_neighbors",
+        "weights",
+        "metric",
+        "p"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "KNNRegressor",
+      "description": "K-Nearest Neighbors Regressor.\n    machine learning, regression, neighbors\n\n    Use cases:\n    - Non-parametric regression\n    - Local approximation\n    - Continuous value prediction",
+      "namespace": "lib.ml.sklearn.neighbors",
+      "node_type": "lib.ml.sklearn.neighbors.KNNRegressor",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "n_neighbors",
+          "type": {
+            "type": "int"
+          },
+          "default": 5,
+          "title": "N Neighbors",
+          "description": "Number of neighbors"
+        },
+        {
+          "name": "weights",
+          "type": {
+            "type": "enum",
+            "values": [
+              "uniform",
+              "distance"
+            ],
+            "type_name": "lib.ml.sklearn.neighbors.KNNWeights"
+          },
+          "default": "uniform",
+          "title": "Weights",
+          "description": "Weight function used in prediction ('uniform' or 'distance')"
+        },
+        {
+          "name": "metric",
+          "type": {
+            "type": "enum",
+            "values": [
+              "euclidean",
+              "manhattan",
+              "chebyshev",
+              "minkowski"
+            ],
+            "type_name": "lib.ml.sklearn.neighbors.KNNMetric"
+          },
+          "default": "euclidean",
+          "title": "Metric",
+          "description": "Distance metric to use"
+        },
+        {
+          "name": "p",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "P",
+          "description": "Power parameter for Minkowski metric (p=2 is Euclidean)"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "n_neighbors",
+        "weights",
+        "metric",
+        "p"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Nearest Neighbors",
+      "description": "Stores input embeddings in a database and retrieves the nearest neighbors for a query embedding.\n    array, embeddings, nearest neighbors, search, similarity",
+      "namespace": "lib.ml.sklearn.neighbors",
+      "node_type": "lib.ml.sklearn.neighbors.NearestNeighbors",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "documents",
+          "type": {
+            "type": "list",
+            "type_args": [
+              {
+                "type": "np_array"
+              }
+            ]
+          },
+          "default": [],
+          "title": "Documents",
+          "description": "The list of documents to search"
+        },
+        {
+          "name": "query",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Query",
+          "description": "The query to search for"
+        },
+        {
+          "name": "n_neighbors",
+          "type": {
+            "type": "int"
+          },
+          "default": 1,
+          "title": "N Neighbors",
+          "description": "The number of neighbors to return"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "list",
+            "type_args": [
+              {
+                "type": "float"
+              }
+            ]
+          },
+          "name": "distances"
+        },
+        {
+          "type": {
+            "type": "list",
+            "type_args": [
+              {
+                "type": "int"
+              }
+            ]
+          },
+          "name": "indices"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "documents",
+        "query",
+        "n_neighbors"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Grid Search",
+      "description": "Exhaustive search over specified parameter values.\n    machine learning, hyperparameter tuning, model selection\n\n    Use cases:\n    - Hyperparameter optimization\n    - Model selection\n    - Automated model tuning",
+      "namespace": "lib.ml.sklearn.model_selection",
+      "node_type": "lib.ml.sklearn.model_selection.GridSearch",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "model",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "default": {},
+          "title": "Model",
+          "description": "Base sklearn model"
+        },
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Training features"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Training target values"
+        },
+        {
+          "name": "param_grid",
+          "type": {
+            "type": "dict",
+            "type_args": [
+              {
+                "type": "str"
+              },
+              {
+                "type": "list",
+                "type_args": [
+                  {
+                    "type": "any"
+                  }
+                ]
+              }
+            ]
+          },
+          "default": {},
+          "title": "Param Grid",
+          "description": "Dictionary with parameters names (string) as keys and lists of parameter settings to try"
+        },
+        {
+          "name": "cv",
+          "type": {
+            "type": "int"
+          },
+          "default": 5,
+          "title": "Cv",
+          "description": "Number of folds for cross-validation"
+        },
+        {
+          "name": "scoring",
+          "type": {
+            "type": "str"
+          },
+          "default": "accuracy",
+          "title": "Scoring",
+          "description": "Scoring metric to use for evaluation"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "best_model"
+        },
+        {
+          "type": {
+            "type": "dict"
+          },
+          "name": "best_params"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "best_score"
+        },
+        {
+          "type": {
+            "type": "dict"
+          },
+          "name": "cv_results"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "model",
+        "X",
+        "y",
+        "param_grid",
+        "cv",
+        "scoring"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "KFold Cross Validation",
+      "description": "K-Fold Cross Validation for model evaluation.\n    machine learning, model evaluation, cross validation\n\n    Use cases:\n    - Model performance estimation\n    - Hyperparameter tuning\n    - Assessing model stability",
+      "namespace": "lib.ml.sklearn.model_selection",
+      "node_type": "lib.ml.sklearn.model_selection.KFoldCrossValidation",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "model",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "default": {},
+          "title": "Model",
+          "description": "Sklearn model to evaluate"
+        },
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features for cross validation"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Target values"
+        },
+        {
+          "name": "n_splits",
+          "type": {
+            "type": "int"
+          },
+          "default": 5,
+          "title": "N Splits",
+          "description": "Number of folds"
+        },
+        {
+          "name": "shuffle",
+          "type": {
+            "type": "bool"
+          },
+          "default": true,
+          "title": "Shuffle",
+          "description": "Whether to shuffle the data"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "scores"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "mean_score"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "std_score"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "model",
+        "X",
+        "y",
+        "n_splits",
+        "shuffle",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Train Test Split",
+      "description": "Split arrays into random train and test subsets.\n    machine learning, data splitting, model evaluation\n\n    Use cases:\n    - Preparing data for model training\n    - Model evaluation\n    - Preventing data leakage",
+      "namespace": "lib.ml.sklearn.model_selection",
+      "node_type": "lib.ml.sklearn.model_selection.TrainTestSplit",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features to split"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Target values to split"
+        },
+        {
+          "name": "test_size",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.25,
+          "title": "Test Size",
+          "description": "Proportion of the dataset to include in the test split"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        },
+        {
+          "name": "shuffle",
+          "type": {
+            "type": "bool"
+          },
+          "default": true,
+          "title": "Shuffle",
+          "description": "Whether to shuffle the data"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "X_train"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "X_test"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "y_train"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "y_test"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "y",
+        "test_size",
+        "random_state",
+        "shuffle"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Load Boston Dataset",
+      "description": "Loads the Boston Housing dataset.\n    dataset, machine learning, regression, housing\n\n    Use cases:\n    - House price prediction\n    - Regression analysis practice",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.LoadBostonDataset",
+      "layout": "default",
+      "properties": [],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "data"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "target"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [],
+      "is_dynamic": false
+    },
+    {
+      "title": "Load Boston Dataset DF",
+      "description": "Loads the Boston Housing dataset as a dataframe.\n    dataset, machine learning, regression, housing\n\n    Use cases:\n    - House price prediction\n    - Regression analysis practice",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.LoadBostonDatasetDF",
+      "layout": "default",
+      "properties": [],
+      "outputs": [
+        {
+          "type": {
+            "type": "dataframe"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [],
+      "is_dynamic": false
+    },
+    {
+      "title": "Load Breast Cancer Dataset",
+      "description": "Loads the Breast Cancer Wisconsin dataset.\n    dataset, machine learning, classification, medical\n\n    Use cases:\n    - Binary classification practice\n    - Medical data analysis",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.LoadBreastCancerDataset",
+      "layout": "default",
+      "properties": [],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "data"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "target"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [],
+      "is_dynamic": false
+    },
+    {
+      "title": "Load Breast Cancer Dataset DF",
+      "description": "Loads the Breast Cancer Wisconsin dataset as a dataframe.\n    dataset, machine learning, classification, medical\n\n    Use cases:\n    - Binary classification practice\n    - Medical data analysis",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.LoadBreastCancerDatasetDF",
+      "layout": "default",
+      "properties": [],
+      "outputs": [
+        {
+          "type": {
+            "type": "dataframe"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [],
+      "is_dynamic": false
+    },
+    {
+      "title": "Load Diabetes Dataset",
+      "description": "Loads the Diabetes dataset for regression.\n    dataset, machine learning, regression, medical\n\n    Use cases:\n    - Regression analysis practice\n    - Medical outcome prediction",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.LoadDiabetesDataset",
+      "layout": "default",
+      "properties": [],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "data"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "target"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [],
+      "is_dynamic": false
+    },
+    {
+      "title": "Load Diabetes Dataset DF",
+      "description": "Loads the Diabetes dataset for regression as a dataframe.\n    dataset, machine learning, regression, medical\n\n    Use cases:\n    - Regression analysis practice\n    - Medical outcome prediction",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.LoadDiabetesDatasetDF",
+      "layout": "default",
+      "properties": [],
+      "outputs": [
+        {
+          "type": {
+            "type": "dataframe"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [],
+      "is_dynamic": false
+    },
+    {
+      "title": "Load Digits Dataset",
+      "description": "Loads the Digits dataset (handwritten digits).\n    dataset, machine learning, classification, image\n\n    Use cases:\n    - Digit recognition practice\n    - Image classification basics",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.LoadDigitsDataset",
+      "layout": "default",
+      "properties": [],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "data"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "target"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [],
+      "is_dynamic": false
+    },
+    {
+      "title": "Load Iris Dataset",
+      "description": "Loads the classic Iris flower dataset.\n    dataset, machine learning, classification\n\n    Use cases:\n    - Practice classification tasks\n    - Learn machine learning basics",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.LoadIrisDataset",
+      "layout": "default",
+      "properties": [],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "data"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "target"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [],
+      "is_dynamic": false
+    },
+    {
+      "title": "Load Iris Dataset DF",
+      "description": "Loads the classic Iris flower dataset as a dataframe.\n    dataset, machine learning, classification\n\n    Use cases:\n    - Practice classification tasks\n    - Learn machine learning basics",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.LoadIrisDatasetDF",
+      "layout": "default",
+      "properties": [],
+      "outputs": [
+        {
+          "type": {
+            "type": "dataframe"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [],
+      "is_dynamic": false
+    },
+    {
+      "title": "Make Blobs Dataset",
+      "description": "Generates isotropic Gaussian blobs for clustering.\n    dataset, machine learning, clustering, synthetic\n\n    Use cases:\n    - Testing clustering algorithms\n    - Visualizing cluster separation",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.MakeBlobsDataset",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "n_samples",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Samples",
+          "description": "Number of samples to generate"
+        },
+        {
+          "name": "n_features",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "N Features",
+          "description": "Number of features"
+        },
+        {
+          "name": "centers",
+          "type": {
+            "type": "int"
+          },
+          "default": 3,
+          "title": "Centers",
+          "description": "Number of centers/clusters"
+        },
+        {
+          "name": "cluster_std",
+          "type": {
+            "type": "float"
+          },
+          "default": 1.0,
+          "title": "Cluster Std",
+          "description": "Standard deviation of clusters"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "data"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "target"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "n_samples",
+        "n_features",
+        "centers",
+        "cluster_std",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Make Blobs Dataset DF",
+      "description": "Generates isotropic Gaussian blobs for clustering as a dataframe.\n    dataset, machine learning, clustering, synthetic\n\n    Use cases:\n    - Testing clustering algorithms\n    - Visualizing cluster separation",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.MakeBlobsDatasetDF",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "n_samples",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Samples",
+          "description": "Number of samples to generate"
+        },
+        {
+          "name": "n_features",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "N Features",
+          "description": "Number of features"
+        },
+        {
+          "name": "centers",
+          "type": {
+            "type": "int"
+          },
+          "default": 3,
+          "title": "Centers",
+          "description": "Number of centers/clusters"
+        },
+        {
+          "name": "cluster_std",
+          "type": {
+            "type": "float"
+          },
+          "default": 1.0,
+          "title": "Cluster Std",
+          "description": "Standard deviation of clusters"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "dataframe"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "n_samples",
+        "n_features",
+        "centers",
+        "cluster_std",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Make Circles Dataset",
+      "description": "Generates a large circle containing a smaller circle.\n    dataset, machine learning, classification, synthetic\n\n    Use cases:\n    - Testing nonlinear classification\n    - Demonstrating circular decision boundaries",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.MakeCirclesDataset",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "n_samples",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Samples",
+          "description": "Number of samples to generate"
+        },
+        {
+          "name": "noise",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.1,
+          "title": "Noise",
+          "description": "Standard deviation of gaussian noise"
+        },
+        {
+          "name": "factor",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.8,
+          "title": "Factor",
+          "description": "Scale factor between inner and outer circle"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "n_samples",
+        "noise",
+        "factor",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Make Circles Dataset DF",
+      "description": "Generates a large circle containing a smaller circle as a dataframe.\n    dataset, machine learning, classification, synthetic\n\n    Use cases:\n    - Testing nonlinear classification\n    - Demonstrating circular decision boundaries",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.MakeCirclesDatasetDF",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "n_samples",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Samples",
+          "description": "Number of samples to generate"
+        },
+        {
+          "name": "noise",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.1,
+          "title": "Noise",
+          "description": "Standard deviation of gaussian noise"
+        },
+        {
+          "name": "factor",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.8,
+          "title": "Factor",
+          "description": "Scale factor between inner and outer circle"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "dataframe"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "n_samples",
+        "noise",
+        "factor",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Make Classification Dataset",
+      "description": "Generates a random n-class classification problem.\n    dataset, machine learning, classification, synthetic\n\n    Use cases:\n    - Testing classification algorithms\n    - Generating controlled test data",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.MakeClassificationDataset",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "n_samples",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Samples",
+          "description": "Number of samples to generate"
+        },
+        {
+          "name": "n_features",
+          "type": {
+            "type": "int"
+          },
+          "default": 20,
+          "title": "N Features",
+          "description": "Number of features"
+        },
+        {
+          "name": "n_classes",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "N Classes",
+          "description": "Number of classes"
+        },
+        {
+          "name": "n_informative",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "N Informative",
+          "description": "Number of informative features"
+        },
+        {
+          "name": "n_redundant",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "N Redundant",
+          "description": "Number of redundant features"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "data"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "target"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "n_samples",
+        "n_features",
+        "n_classes",
+        "n_informative",
+        "n_redundant",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Make Classification Dataset DF",
+      "description": "Generates a random n-class classification problem as a dataframe.\n    dataset, machine learning, classification, synthetic\n\n    Use cases:\n    - Testing classification algorithms\n    - Generating controlled test data",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.MakeClassificationDatasetDF",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "n_samples",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Samples",
+          "description": "Number of samples to generate"
+        },
+        {
+          "name": "n_features",
+          "type": {
+            "type": "int"
+          },
+          "default": 20,
+          "title": "N Features",
+          "description": "Number of features"
+        },
+        {
+          "name": "n_classes",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "N Classes",
+          "description": "Number of classes"
+        },
+        {
+          "name": "n_informative",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "N Informative",
+          "description": "Number of informative features"
+        },
+        {
+          "name": "n_redundant",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "N Redundant",
+          "description": "Number of redundant features"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "dataframe"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "n_samples",
+        "n_features",
+        "n_classes",
+        "n_informative",
+        "n_redundant",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Make Moons Dataset",
+      "description": "Generates two interleaving half circles.\n    dataset, machine learning, classification, synthetic\n\n    Use cases:\n    - Testing nonlinear classification\n    - Demonstrating decision boundaries",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.MakeMoonsDataset",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "n_samples",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Samples",
+          "description": "Number of samples to generate"
+        },
+        {
+          "name": "noise",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.1,
+          "title": "Noise",
+          "description": "Standard deviation of gaussian noise"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "n_samples",
+        "noise",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Make Moons Dataset DF",
+      "description": "Generates two interleaving half circles as a dataframe.\n    dataset, machine learning, classification, synthetic\n\n    Use cases:\n    - Testing nonlinear classification\n    - Demonstrating decision boundaries",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.MakeMoonsDatasetDF",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "n_samples",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Samples",
+          "description": "Number of samples to generate"
+        },
+        {
+          "name": "noise",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.1,
+          "title": "Noise",
+          "description": "Standard deviation of gaussian noise"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "dataframe"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "n_samples",
+        "noise",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Make Regression Dataset",
+      "description": "Generates a random regression problem.\n    dataset, machine learning, regression, synthetic\n\n    Use cases:\n    - Testing regression algorithms\n    - Generating controlled test data",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.MakeRegressionDataset",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "n_samples",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Samples",
+          "description": "Number of samples to generate"
+        },
+        {
+          "name": "n_features",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Features",
+          "description": "Number of features"
+        },
+        {
+          "name": "n_informative",
+          "type": {
+            "type": "int"
+          },
+          "default": 10,
+          "title": "N Informative",
+          "description": "Number of informative features"
+        },
+        {
+          "name": "noise",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.1,
+          "title": "Noise",
+          "description": "Standard deviation of gaussian noise"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "data"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "target"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "n_samples",
+        "n_features",
+        "n_informative",
+        "noise",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Make Regression Dataset DF",
+      "description": "Generates a random regression problem as a dataframe.\n    dataset, machine learning, regression, synthetic\n\n    Use cases:\n    - Testing regression algorithms\n    - Generating controlled test data",
+      "namespace": "lib.ml.sklearn.datasets",
+      "node_type": "lib.ml.sklearn.datasets.MakeRegressionDatasetDF",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "n_samples",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Samples",
+          "description": "Number of samples to generate"
+        },
+        {
+          "name": "n_features",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Features",
+          "description": "Number of features"
+        },
+        {
+          "name": "n_informative",
+          "type": {
+            "type": "int"
+          },
+          "default": 10,
+          "title": "N Informative",
+          "description": "Number of informative features"
+        },
+        {
+          "name": "noise",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.1,
+          "title": "Noise",
+          "description": "Standard deviation of gaussian noise"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "dataframe"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "n_samples",
+        "n_features",
+        "n_informative",
+        "noise",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Predict",
+      "description": "Makes predictions using a fitted sklearn model.\n    machine learning, prediction, inference\n\n    Use cases:\n    - Make predictions on new data\n    - Score model performance",
+      "namespace": "lib.ml.sklearn.__init__",
+      "node_type": "lib.ml.sklearn.__init__.Predict",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "model",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "default": {},
+          "title": "Model",
+          "description": "Fitted sklearn model"
+        },
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features to predict on"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "model",
+        "X"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "KNNImputer",
+      "description": "Imputation using k-Nearest Neighbors.\n    machine learning, preprocessing, imputation, missing values, knn\n\n    Use cases:\n    - Advanced missing value imputation\n    - Preserving data relationships\n    - Handling multiple missing values",
+      "namespace": "lib.ml.sklearn.impute",
+      "node_type": "lib.ml.sklearn.impute.KNNImputer",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Input data with missing values"
+        },
+        {
+          "name": "n_neighbors",
+          "type": {
+            "type": "int"
+          },
+          "default": 5,
+          "title": "N Neighbors",
+          "description": "Number of neighboring samples to use for imputation"
+        },
+        {
+          "name": "weights",
+          "type": {
+            "type": "enum",
+            "values": [
+              "uniform",
+              "distance"
+            ],
+            "type_name": "lib.ml.sklearn.impute.Weights"
+          },
+          "default": "uniform",
+          "title": "Weights",
+          "description": "Weight function used in prediction: 'uniform' or 'distance'"
+        },
+        {
+          "name": "missing_values",
+          "type": {
+            "type": "union",
+            "type_args": [
+              {
+                "type": "str"
+              },
+              {
+                "type": "float"
+              }
+            ]
+          },
+          "default": NaN,
+          "title": "Missing Values",
+          "description": "Placeholder for missing values. Can be np.nan or numeric value"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "transformed"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "n_neighbors",
+        "weights",
+        "missing_values"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Simple Imputer",
+      "description": "Imputation transformer for completing missing values.\n    machine learning, preprocessing, imputation, missing values\n\n    Use cases:\n    - Handling missing values in datasets\n    - Basic data cleaning\n    - Preparing data for ML models",
+      "namespace": "lib.ml.sklearn.impute",
+      "node_type": "lib.ml.sklearn.impute.SimpleImputer",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Input data with missing values"
+        },
+        {
+          "name": "strategy",
+          "type": {
+            "type": "str"
+          },
+          "default": "mean",
+          "title": "Strategy",
+          "description": "Imputation strategy: 'mean', 'median', 'most_frequent', or 'constant'"
+        },
+        {
+          "name": "fill_value",
+          "type": {
+            "type": "union",
+            "type_args": [
+              {
+                "type": "str"
+              },
+              {
+                "type": "float"
+              }
+            ]
+          },
+          "title": "Fill Value",
+          "description": "Value to use when strategy is 'constant'. Can be str or numeric"
+        },
+        {
+          "name": "missing_values",
+          "type": {
+            "type": "union",
+            "type_args": [
+              {
+                "type": "str"
+              },
+              {
+                "type": "float"
+              }
+            ]
+          },
+          "default": NaN,
+          "title": "Missing Values",
+          "description": "Placeholder for missing values. Can be np.nan or numeric value"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "transformed"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "strategy",
+        "fill_value",
+        "missing_values"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Lasso Regression",
+      "description": "Fits a lasso regression model (L1 regularization).\n    machine learning, regression, regularization, feature selection\n\n    Use cases:\n    - Feature selection\n    - Sparse solutions",
+      "namespace": "lib.ml.sklearn.linear_model",
+      "node_type": "lib.ml.sklearn.linear_model.LassoRegression",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "alpha",
+          "type": {
+            "type": "float"
+          },
+          "default": 1.0,
+          "title": "Alpha",
+          "description": "Regularization strength"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "coefficients"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "intercept"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "alpha"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Linear Regression",
+      "description": "Fits a linear regression model.\n    machine learning, regression, linear model\n\n    Use cases:\n    - Predict continuous values\n    - Find linear relationships between variables",
+      "namespace": "lib.ml.sklearn.linear_model",
+      "node_type": "lib.ml.sklearn.linear_model.LinearRegression",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "fit_intercept",
+          "type": {
+            "type": "bool"
+          },
+          "default": true,
+          "title": "Fit Intercept",
+          "description": "Whether to calculate the intercept"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "coefficients"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "intercept"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "fit_intercept"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Logistic Regression",
+      "description": "Fits a logistic regression model for classification.\n    machine learning, classification, logistic regression\n\n    Use cases:\n    - Binary classification problems\n    - Probability estimation",
+      "namespace": "lib.ml.sklearn.linear_model",
+      "node_type": "lib.ml.sklearn.linear_model.LogisticRegression",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values (binary)"
+        },
+        {
+          "name": "C",
+          "type": {
+            "type": "float"
+          },
+          "default": 1.0,
+          "title": "C",
+          "description": "Inverse of regularization strength"
+        },
+        {
+          "name": "max_iter",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "Max Iter",
+          "description": "Maximum number of iterations"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "coefficients"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "intercept"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "C",
+        "max_iter"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Ridge Regression",
+      "description": "Fits a ridge regression model (L2 regularization).\n    machine learning, regression, regularization\n\n    Use cases:\n    - Handle multicollinearity\n    - Prevent overfitting",
+      "namespace": "lib.ml.sklearn.linear_model",
+      "node_type": "lib.ml.sklearn.linear_model.RidgeRegression",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "alpha",
+          "type": {
+            "type": "float"
+          },
+          "default": 1.0,
+          "title": "Alpha",
+          "description": "Regularization strength"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "coefficients"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "intercept"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "alpha"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Cluster Visualization",
+      "description": "Visualize clustering results in 2D space.\n    machine learning, visualization, clustering\n\n    Use cases:\n    - Cluster analysis\n    - Pattern recognition\n    - Data distribution visualization",
+      "namespace": "lib.ml.sklearn.visualization",
+      "node_type": "lib.ml.sklearn.visualization.ClusterVisualization",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Input features (2D data)"
+        },
+        {
+          "name": "labels",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Labels",
+          "description": "Cluster labels"
+        },
+        {
+          "name": "centers",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Centers",
+          "description": "Cluster centers (if available)"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "image"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "labels",
+        "centers"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Confusion Matrix Plot",
+      "description": "Plot confusion matrix heatmap.\n    machine learning, visualization, evaluation, classification\n\n    Use cases:\n    - Classification error analysis\n    - Model performance visualization\n    - Class balance assessment",
+      "namespace": "lib.ml.sklearn.visualization",
+      "node_type": "lib.ml.sklearn.visualization.ConfusionMatrixPlot",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "True labels"
+        },
+        {
+          "name": "y_pred",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Pred",
+          "description": "Predicted labels"
+        },
+        {
+          "name": "normalize",
+          "type": {
+            "type": "bool"
+          },
+          "default": true,
+          "title": "Normalize",
+          "description": "Whether to normalize the confusion matrix"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "image"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_pred",
+        "normalize"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Decision Boundary Plot",
+      "description": "Visualize classifier decision boundaries in 2D space.\n    machine learning, visualization, classification, knn\n\n    Use cases:\n    - Decision boundary visualization\n    - Model behavior analysis\n    - Feature space understanding\n    - High-dimensional data visualization through dimension selection",
+      "namespace": "lib.ml.sklearn.visualization",
+      "node_type": "lib.ml.sklearn.visualization.DecisionBoundaryPlot",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "model",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "default": {},
+          "title": "Model",
+          "description": "Fitted classifier"
+        },
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Training features"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Training labels"
+        },
+        {
+          "name": "mesh_step_size",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.02,
+          "title": "Mesh Step Size",
+          "description": "Step size for creating the mesh grid"
+        },
+        {
+          "name": "dim1",
+          "type": {
+            "type": "int"
+          },
+          "default": 0,
+          "title": "Dim1",
+          "description": "First dimension index to plot"
+        },
+        {
+          "name": "dim2",
+          "type": {
+            "type": "int"
+          },
+          "default": 1,
+          "title": "Dim2",
+          "description": "Second dimension index to plot"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "image"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "model",
+        "X",
+        "y",
+        "mesh_step_size",
+        "dim1",
+        "dim2"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Elbow Curve Plot",
+      "description": "Plot elbow curve for K-means clustering.\n    machine learning, visualization, clustering, model selection\n\n    Use cases:\n    - Optimal cluster number selection\n    - K-means evaluation\n    - Model complexity analysis",
+      "namespace": "lib.ml.sklearn.visualization",
+      "node_type": "lib.ml.sklearn.visualization.ElbowCurvePlot",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "inertias",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Inertias",
+          "description": "Inertia values for different k"
+        },
+        {
+          "name": "k_values",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "K Values",
+          "description": "K values tested"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "image"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "inertias",
+        "k_values"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Learning Curve",
+      "description": "Plot learning curves to diagnose bias/variance.\n    machine learning, visualization, evaluation, model selection\n\n    Use cases:\n    - Bias-variance diagnosis\n    - Sample size impact analysis\n    - Model complexity assessment",
+      "namespace": "lib.ml.sklearn.visualization",
+      "node_type": "lib.ml.sklearn.visualization.LearningCurve",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "model",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "title": "Model",
+          "description": "Fitted sklearn model"
+        },
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Training features"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Training labels"
+        },
+        {
+          "name": "cv",
+          "type": {
+            "type": "int"
+          },
+          "default": 5,
+          "title": "Cv",
+          "description": "Number of cross-validation folds"
+        },
+        {
+          "name": "n_jobs",
+          "type": {
+            "type": "int"
+          },
+          "title": "N Jobs",
+          "description": "Number of jobs for parallel processing"
+        },
+        {
+          "name": "train_sizes",
+          "type": {
+            "type": "list",
+            "type_args": [
+              {
+                "type": "float"
+              }
+            ]
+          },
+          "default": [
+            0.1,
+            0.3,
+            0.5,
+            0.7,
+            0.9
+          ],
+          "title": "Train Sizes",
+          "description": "Points on the training learning curve"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "image"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "model",
+        "X",
+        "y",
+        "cv",
+        "n_jobs",
+        "train_sizes"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "NMFComponents Plot",
+      "description": "Visualize NMF components as a heatmap.\n    machine learning, visualization, dimensionality reduction, nmf\n\n    Use cases:\n    - Inspect learned NMF components\n    - Analyze feature patterns\n    - Validate decomposition results",
+      "namespace": "lib.ml.sklearn.visualization",
+      "node_type": "lib.ml.sklearn.visualization.NMFComponentsPlot",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "components",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Components",
+          "description": "NMF components matrix (from components_ attribute)"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "image"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "components"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Plot TSNE",
+      "description": "Create a t-SNE plot for high-dimensional array data.\n    array, tsne, visualization, dimensionality reduction\n\n    Use cases:\n    - Visualize clusters in high-dimensional data\n    - Explore relationships in complex datasets\n    - Reduce dimensionality for data analysis",
+      "namespace": "lib.ml.sklearn.visualization",
+      "node_type": "lib.ml.sklearn.visualization.PlotTSNE",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "array",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Array"
+        },
+        {
+          "name": "color_indices",
+          "type": {
+            "type": "list",
+            "type_args": [
+              {
+                "type": "int"
+              }
+            ]
+          },
+          "default": [],
+          "title": "Color Indices"
+        },
+        {
+          "name": "perplexity",
+          "type": {
+            "type": "int"
+          },
+          "default": 30,
+          "title": "Perplexity",
+          "min": 1.0,
+          "max": 50.0
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "image"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "array",
+        "color_indices",
+        "perplexity"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "ROCCurve",
+      "description": "Plot Receiver Operating Characteristic (ROC) curve.\n    machine learning, visualization, evaluation, classification\n\n    Use cases:\n    - Binary classifier evaluation\n    - Model comparison\n    - Threshold selection",
+      "namespace": "lib.ml.sklearn.visualization",
+      "node_type": "lib.ml.sklearn.visualization.ROCCurve",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "True binary labels"
+        },
+        {
+          "name": "y_score",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Score",
+          "description": "Target scores/probabilities"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "image"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_score"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Regression Prediction Plot",
+      "description": "Plot actual vs predicted values for regression models.\n    machine learning, visualization, evaluation, regression\n\n    Use cases:\n    - Regression model evaluation\n    - Prediction accuracy visualization\n    - Outlier detection",
+      "namespace": "lib.ml.sklearn.visualization",
+      "node_type": "lib.ml.sklearn.visualization.RegressionPredictionPlot",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "True values"
+        },
+        {
+          "name": "y_pred",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Pred",
+          "description": "Predicted values"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "image"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_pred"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Regression Residual Plot",
+      "description": "Plot residuals for regression analysis.\n    machine learning, visualization, evaluation, regression\n\n    Use cases:\n    - Model assumptions validation\n    - Error pattern detection\n    - Heteroscedasticity check",
+      "namespace": "lib.ml.sklearn.visualization",
+      "node_type": "lib.ml.sklearn.visualization.RegressionResidualPlot",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "y_true",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y True",
+          "description": "True values"
+        },
+        {
+          "name": "y_pred",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Pred",
+          "description": "Predicted values"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "image"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "y_true",
+        "y_pred"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Partial Dependence Display",
+      "description": "Create Partial Dependence Plot (PDP) visualization data.\n    machine learning, model inspection, visualization\n\n    Use cases:\n    - Visualizing feature effects\n    - Model interpretation\n    - Feature relationship analysis",
+      "namespace": "lib.ml.sklearn.inspection",
+      "node_type": "lib.ml.sklearn.inspection.PartialDependenceDisplay",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "model",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "default": {},
+          "title": "Model",
+          "description": "Fitted sklearn model"
+        },
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Training data"
+        },
+        {
+          "name": "features",
+          "type": {
+            "type": "tuple",
+            "type_args": [
+              {
+                "type": "union",
+                "type_args": [
+                  {
+                    "type": "int"
+                  },
+                  {
+                    "type": "tuple",
+                    "type_args": [
+                      {
+                        "type": "int"
+                      },
+                      {
+                        "type": "int"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "title": "Features",
+          "description": "Features for which to create PDP. Can be indices for 1D or tuples for 2D"
+        },
+        {
+          "name": "feature_names",
+          "type": {
+            "type": "str"
+          },
+          "default": "",
+          "title": "Feature Names",
+          "description": "Comma separated names of features"
+        },
+        {
+          "name": "grid_resolution",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "Grid Resolution",
+          "description": "Number of points in the grid"
+        },
+        {
+          "name": "lower_percentile",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.05,
+          "title": "Lower Percentile",
+          "description": "Lower percentile to compute the feature values range"
+        },
+        {
+          "name": "upper_percentile",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.95,
+          "title": "Upper Percentile",
+          "description": "Upper percentile to compute the feature values range"
+        },
+        {
+          "name": "kind",
+          "type": {
+            "type": "enum",
+            "values": [
+              "average",
+              "individual"
+            ],
+            "type_name": "lib.ml.sklearn.inspection.PartialDependenceKind"
+          },
+          "default": "average",
+          "title": "Kind",
+          "description": "Kind of partial dependence result"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "list",
+            "type_args": [
+              {
+                "type": "tuple",
+                "type_args": [
+                  {
+                    "type": "np_array"
+                  },
+                  {
+                    "type": "np_array"
+                  }
+                ]
+              }
+            ]
+          },
+          "name": "pd_results"
+        },
+        {
+          "type": {
+            "type": "list",
+            "type_args": [
+              {
+                "type": "str"
+              }
+            ]
+          },
+          "name": "feature_names"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "model",
+        "X",
+        "features",
+        "feature_names",
+        "grid_resolution",
+        "lower_percentile",
+        "upper_percentile",
+        "kind"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Partial Dependence",
+      "description": "Calculate Partial Dependence for features.\n    machine learning, model inspection, feature effects\n\n    Use cases:\n    - Feature impact visualization\n    - Model interpretation\n    - Understanding feature relationships",
+      "namespace": "lib.ml.sklearn.inspection",
+      "node_type": "lib.ml.sklearn.inspection.PartialDependence",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "model",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "default": {},
+          "title": "Model",
+          "description": "Fitted sklearn model"
+        },
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Training data"
+        },
+        {
+          "name": "features",
+          "type": {
+            "type": "tuple",
+            "type_args": [
+              {
+                "type": "int"
+              }
+            ]
+          },
+          "title": "Features",
+          "description": "List of features for which to calculate PD. Each element can be an int for 1D PD or a list of 2 ints for 2D"
+        },
+        {
+          "name": "kind",
+          "type": {
+            "type": "enum",
+            "values": [
+              "average",
+              "individual"
+            ],
+            "type_name": "lib.ml.sklearn.inspection.PartialDependenceKind"
+          },
+          "default": "average",
+          "title": "Kind",
+          "description": "Kind of partial dependence result: 'average' or 'individual'"
+        },
+        {
+          "name": "grid_resolution",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "Grid Resolution",
+          "description": "Number of equally spaced points in the grid"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "list",
+            "type_args": [
+              {
+                "type": "np_array"
+              }
+            ]
+          },
+          "name": "pd_values"
+        },
+        {
+          "type": {
+            "type": "list",
+            "type_args": [
+              {
+                "type": "np_array"
+              }
+            ]
+          },
+          "name": "pd_positions"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "model",
+        "X",
+        "features",
+        "kind",
+        "grid_resolution"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Permutation Importance",
+      "description": "Calculate Permutation Feature Importance.\n    machine learning, model inspection, feature importance\n\n    Use cases:\n    - Feature selection\n    - Model interpretation\n    - Identifying key predictors",
+      "namespace": "lib.ml.sklearn.inspection",
+      "node_type": "lib.ml.sklearn.inspection.PermutationImportance",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "model",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "default": {},
+          "title": "Model",
+          "description": "Fitted sklearn model"
+        },
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Validation data"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "True labels/values"
+        },
+        {
+          "name": "n_repeats",
+          "type": {
+            "type": "int"
+          },
+          "default": 5,
+          "title": "N Repeats",
+          "description": "Number of times to permute each feature"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        },
+        {
+          "name": "scoring",
+          "type": {
+            "type": "str"
+          },
+          "default": "accuracy",
+          "title": "Scoring",
+          "description": "Scoring metric (if None, uses estimator's default scorer)"
+        },
+        {
+          "name": "n_jobs",
+          "type": {
+            "type": "int"
+          },
+          "title": "N Jobs",
+          "description": "Number of jobs to run in parallel"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "importances_mean"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "importances_std"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "importances"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "model",
+        "X",
+        "y",
+        "n_repeats",
+        "random_state",
+        "scoring",
+        "n_jobs"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Bernoulli NB",
+      "description": "Bernoulli Naive Bayes classifier.\n    machine learning, classification, naive bayes, probabilistic\n\n    Use cases:\n    - Text classification with binary features\n    - Document classification\n    - Binary feature classification",
+      "namespace": "lib.ml.sklearn.naive_bayes",
+      "node_type": "lib.ml.sklearn.naive_bayes.BernoulliNB",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "alpha",
+          "type": {
+            "type": "float"
+          },
+          "default": 1.0,
+          "title": "Alpha",
+          "description": "Additive (Laplace/Lidstone) smoothing parameter (0 for no smoothing)"
+        },
+        {
+          "name": "fit_prior",
+          "type": {
+            "type": "bool"
+          },
+          "default": true,
+          "title": "Fit Prior",
+          "description": "Whether to learn class prior probabilities"
+        },
+        {
+          "name": "binarize",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.0,
+          "title": "Binarize",
+          "description": "Threshold for binarizing features (None for no binarization)"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "alpha",
+        "fit_prior",
+        "binarize"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Gaussian NB",
+      "description": "Gaussian Naive Bayes classifier.\n    machine learning, classification, naive bayes, probabilistic\n\n    Use cases:\n    - Real-valued feature classification\n    - Fast training and prediction\n    - Baseline for classification tasks",
+      "namespace": "lib.ml.sklearn.naive_bayes",
+      "node_type": "lib.ml.sklearn.naive_bayes.GaussianNB",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "var_smoothing",
+          "type": {
+            "type": "float"
+          },
+          "default": 1e-09,
+          "title": "Var Smoothing",
+          "description": "Portion of the largest variance of all features that is added to variances for calculation stability"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "var_smoothing"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Multinomial NB",
+      "description": "Multinomial Naive Bayes classifier.\n    machine learning, classification, naive bayes, probabilistic\n\n    Use cases:\n    - Text classification\n    - Document categorization\n    - Feature counts or frequencies",
+      "namespace": "lib.ml.sklearn.naive_bayes",
+      "node_type": "lib.ml.sklearn.naive_bayes.MultinomialNB",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "alpha",
+          "type": {
+            "type": "float"
+          },
+          "default": 1.0,
+          "title": "Alpha",
+          "description": "Additive (Laplace/Lidstone) smoothing parameter (0 for no smoothing)"
+        },
+        {
+          "name": "fit_prior",
+          "type": {
+            "type": "bool"
+          },
+          "default": true,
+          "title": "Fit Prior",
+          "description": "Whether to learn class prior probabilities"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "alpha",
+        "fit_prior"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Agglomerative Clustering",
+      "description": "Hierarchical clustering using a bottom-up approach.\n    machine learning, clustering, unsupervised, hierarchical\n\n    Use cases:\n    - Hierarchical data organization\n    - Taxonomy creation\n    - Document hierarchies",
+      "namespace": "lib.ml.sklearn.cluster",
+      "node_type": "lib.ml.sklearn.cluster.AgglomerativeClustering",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features for clustering"
+        },
+        {
+          "name": "n_clusters",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "N Clusters",
+          "description": "Number of clusters"
+        },
+        {
+          "name": "linkage",
+          "type": {
+            "type": "enum",
+            "values": [
+              "ward",
+              "complete",
+              "average",
+              "single"
+            ],
+            "type_name": "lib.ml.sklearn.cluster.AgglomerativeClusteringLinkage"
+          },
+          "default": "ward",
+          "title": "Linkage",
+          "description": "Linkage criterion: 'ward', 'complete', 'average', 'single'"
+        },
+        {
+          "name": "metric",
+          "type": {
+            "type": "str"
+          },
+          "default": "euclidean",
+          "title": "Metric",
+          "description": "Metric used for distance computation"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "labels"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "n_clusters",
+        "linkage",
+        "metric"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "DBSCAN",
+      "description": "Density-Based Spatial Clustering of Applications with Noise.\n    machine learning, clustering, unsupervised, density-based\n\n    Use cases:\n    - Anomaly detection\n    - Spatial clustering\n    - Finding clusters of arbitrary shape",
+      "namespace": "lib.ml.sklearn.cluster",
+      "node_type": "lib.ml.sklearn.cluster.DBSCAN",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features for clustering"
+        },
+        {
+          "name": "eps",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.5,
+          "title": "Eps",
+          "description": "Maximum distance between samples for neighborhood"
+        },
+        {
+          "name": "min_samples",
+          "type": {
+            "type": "int"
+          },
+          "default": 5,
+          "title": "Min Samples",
+          "description": "Minimum number of samples in a neighborhood"
+        },
+        {
+          "name": "metric",
+          "type": {
+            "type": "str"
+          },
+          "default": "euclidean",
+          "title": "Metric",
+          "description": "Metric to compute distances"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "labels"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "eps",
+        "min_samples",
+        "metric"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "KMeans",
+      "description": "K-Means clustering algorithm.\n    machine learning, clustering, unsupervised\n\n    Use cases:\n    - Customer segmentation\n    - Image compression\n    - Document clustering",
+      "namespace": "lib.ml.sklearn.cluster",
+      "node_type": "lib.ml.sklearn.cluster.KMeans",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features for clustering"
+        },
+        {
+          "name": "n_clusters",
+          "type": {
+            "type": "int"
+          },
+          "default": 8,
+          "title": "N Clusters",
+          "description": "Number of clusters"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        },
+        {
+          "name": "max_iter",
+          "type": {
+            "type": "int"
+          },
+          "default": 300,
+          "title": "Max Iter",
+          "description": "Maximum number of iterations"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "labels"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "centroids"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "n_clusters",
+        "random_state",
+        "max_iter"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Min Max Scaler",
+      "description": "Scale features to a given range.\n    machine learning, preprocessing, scaling\n\n    Use cases:\n    - Feature scaling to fixed range\n    - Neural network input preparation\n    - Image processing",
+      "namespace": "lib.ml.sklearn.preprocessing",
+      "node_type": "lib.ml.sklearn.preprocessing.MinMaxScaler",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features to scale"
+        },
+        {
+          "name": "feature_range",
+          "type": {
+            "type": "tuple"
+          },
+          "default": [
+            0,
+            1
+          ],
+          "title": "Feature Range",
+          "description": "Desired range of transformed data"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "transformed"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "feature_range"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Normalizer",
+      "description": "Normalize samples individually to unit norm.\n    machine learning, preprocessing, normalization\n\n    Use cases:\n    - Text classification\n    - Feature normalization\n    - Preparing data for cosine similarity",
+      "namespace": "lib.ml.sklearn.preprocessing",
+      "node_type": "lib.ml.sklearn.preprocessing.Normalizer",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features to normalize"
+        },
+        {
+          "name": "norm",
+          "type": {
+            "type": "enum",
+            "values": [
+              "l1",
+              "l2",
+              "max"
+            ],
+            "type_name": "lib.ml.sklearn.preprocessing.NormalizerNorm"
+          },
+          "default": "max",
+          "title": "Norm",
+          "description": "The norm to use: 'l1', 'l2', or 'max'"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "transformed"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "norm"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Robust Scaler",
+      "description": "Scale features using statistics that are robust to outliers.\n    machine learning, preprocessing, scaling, outliers\n\n    Use cases:\n    - Handling datasets with outliers\n    - Robust feature scaling\n    - Preprocessing for robust models",
+      "namespace": "lib.ml.sklearn.preprocessing",
+      "node_type": "lib.ml.sklearn.preprocessing.RobustScaler",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features to scale"
+        },
+        {
+          "name": "with_centering",
+          "type": {
+            "type": "bool"
+          },
+          "default": true,
+          "title": "With Centering",
+          "description": "If True, center the data before scaling"
+        },
+        {
+          "name": "with_scaling",
+          "type": {
+            "type": "bool"
+          },
+          "default": true,
+          "title": "With Scaling",
+          "description": "If True, scale the data to unit variance"
+        },
+        {
+          "name": "quantile_range",
+          "type": {
+            "type": "tuple"
+          },
+          "default": [
+            25.0,
+            75.0
+          ],
+          "title": "Quantile Range",
+          "description": "Quantile range used to calculate scale_"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "transformed"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "with_centering",
+        "with_scaling",
+        "quantile_range"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Standard Scaler",
+      "description": "Standardize features by removing the mean and scaling to unit variance.\n    machine learning, preprocessing, scaling\n\n    Use cases:\n    - Feature normalization\n    - Preparing data for ML algorithms\n    - Handling different scales in features",
+      "namespace": "lib.ml.sklearn.preprocessing",
+      "node_type": "lib.ml.sklearn.preprocessing.StandardScaler",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features to standardize"
+        },
+        {
+          "name": "with_mean",
+          "type": {
+            "type": "bool"
+          },
+          "default": true,
+          "title": "With Mean",
+          "description": "If True, center the data before scaling"
+        },
+        {
+          "name": "with_std",
+          "type": {
+            "type": "bool"
+          },
+          "default": true,
+          "title": "With Std",
+          "description": "If True, scale the data to unit variance"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "transformed"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "with_mean",
+        "with_std"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Transform",
+      "description": "Transform new data using a fitted preprocessing model.\n        machine learning, preprocessing, transformation\n\n        Use cases:\n        - Applying fitted preprocessing to new data\n        - Consistent data transformation\n        - Pipeline preprocessing",
+      "namespace": "lib.ml.sklearn.preprocessing",
+      "node_type": "lib.ml.sklearn.preprocessing.Transform",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "model",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "default": {},
+          "title": "Model",
+          "description": "Fitted preprocessing model"
+        },
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features to transform"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "transformed"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "model",
+        "X"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Gradient Boosting Classifier",
+      "description": "Gradient Boosting Classifier.\n    machine learning, classification, ensemble, boosting\n\n    Use cases:\n    - High-performance classification\n    - Handling imbalanced datasets\n    - Complex decision boundaries",
+      "namespace": "lib.ml.sklearn.ensemble",
+      "node_type": "lib.ml.sklearn.ensemble.GradientBoostingClassifier",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "n_estimators",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Estimators",
+          "description": "Number of boosting stages"
+        },
+        {
+          "name": "learning_rate",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.1,
+          "title": "Learning Rate",
+          "description": "Learning rate shrinks the contribution of each tree"
+        },
+        {
+          "name": "max_depth",
+          "type": {
+            "type": "int"
+          },
+          "default": 3,
+          "title": "Max Depth",
+          "description": "Maximum depth of the trees"
+        },
+        {
+          "name": "min_samples_split",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "Min Samples Split",
+          "description": "Minimum samples required to split a node"
+        },
+        {
+          "name": "subsample",
+          "type": {
+            "type": "float"
+          },
+          "default": 1.0,
+          "title": "Subsample",
+          "description": "Fraction of samples used for fitting the trees"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 0,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "feature_importances"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "n_estimators",
+        "learning_rate",
+        "max_depth",
+        "min_samples_split",
+        "subsample",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Gradient Boosting Regressor",
+      "description": "Gradient Boosting Regressor.\n    machine learning, regression, ensemble, boosting\n\n    Use cases:\n    - High-performance regression\n    - Complex function approximation\n    - Robust predictions",
+      "namespace": "lib.ml.sklearn.ensemble",
+      "node_type": "lib.ml.sklearn.ensemble.GradientBoostingRegressor",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "n_estimators",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Estimators",
+          "description": "Number of boosting stages"
+        },
+        {
+          "name": "learning_rate",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.1,
+          "title": "Learning Rate",
+          "description": "Learning rate shrinks the contribution of each tree"
+        },
+        {
+          "name": "max_depth",
+          "type": {
+            "type": "int"
+          },
+          "default": 3,
+          "title": "Max Depth",
+          "description": "Maximum depth of the trees"
+        },
+        {
+          "name": "min_samples_split",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "Min Samples Split",
+          "description": "Minimum samples required to split a node"
+        },
+        {
+          "name": "subsample",
+          "type": {
+            "type": "float"
+          },
+          "default": 1.0,
+          "title": "Subsample",
+          "description": "Fraction of samples used for fitting the trees"
+        },
+        {
+          "name": "loss",
+          "type": {
+            "type": "enum",
+            "values": [
+              "squared_error",
+              "absolute_error",
+              "huber",
+              "quantile"
+            ],
+            "type_name": "lib.ml.sklearn.ensemble.GradientBoostingLoss"
+          },
+          "default": "squared_error",
+          "title": "Loss",
+          "description": "Loss function to be optimized ('squared_error', 'absolute_error', 'huber', 'quantile')"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "feature_importances"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "n_estimators",
+        "learning_rate",
+        "max_depth",
+        "min_samples_split",
+        "subsample",
+        "loss",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Random Forest Classifier",
+      "description": "Random Forest Classifier.\n    machine learning, classification, ensemble, tree\n\n    Use cases:\n    - Complex classification tasks\n    - Feature importance analysis\n    - Robust to overfitting",
+      "namespace": "lib.ml.sklearn.ensemble",
+      "node_type": "lib.ml.sklearn.ensemble.RandomForestClassifier",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "n_estimators",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Estimators",
+          "description": "Number of trees in the forest"
+        },
+        {
+          "name": "max_depth",
+          "type": {
+            "type": "int"
+          },
+          "title": "Max Depth",
+          "description": "Maximum depth of the trees"
+        },
+        {
+          "name": "min_samples_split",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "Min Samples Split",
+          "description": "Minimum samples required to split a node"
+        },
+        {
+          "name": "min_samples_leaf",
+          "type": {
+            "type": "int"
+          },
+          "default": 1,
+          "title": "Min Samples Leaf",
+          "description": "Minimum samples required at a leaf node"
+        },
+        {
+          "name": "criterion",
+          "type": {
+            "type": "enum",
+            "values": [
+              "gini",
+              "entropy"
+            ],
+            "type_name": "lib.ml.sklearn.ensemble.RandomForestCriterion"
+          },
+          "default": "gini",
+          "title": "Criterion",
+          "description": "Function to measure quality of split ('gini' or 'entropy')"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "feature_importances"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "n_estimators",
+        "max_depth",
+        "min_samples_split",
+        "min_samples_leaf",
+        "criterion",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Random Forest Regressor",
+      "description": "Random Forest Regressor.\n    machine learning, regression, ensemble, tree\n\n    Use cases:\n    - Complex regression tasks\n    - Feature importance analysis\n    - Robust predictions",
+      "namespace": "lib.ml.sklearn.ensemble",
+      "node_type": "lib.ml.sklearn.ensemble.RandomForestRegressor",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "n_estimators",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "N Estimators",
+          "description": "Number of trees in the forest"
+        },
+        {
+          "name": "max_depth",
+          "type": {
+            "type": "int"
+          },
+          "title": "Max Depth",
+          "description": "Maximum depth of the trees"
+        },
+        {
+          "name": "min_samples_split",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "Min Samples Split",
+          "description": "Minimum samples required to split a node"
+        },
+        {
+          "name": "min_samples_leaf",
+          "type": {
+            "type": "int"
+          },
+          "default": 1,
+          "title": "Min Samples Leaf",
+          "description": "Minimum samples required at a leaf node"
+        },
+        {
+          "name": "criterion",
+          "type": {
+            "type": "enum",
+            "values": [
+              "squared_error",
+              "absolute_error",
+              "friedman_mse",
+              "poisson"
+            ],
+            "type_name": "lib.ml.sklearn.ensemble.RandomForestLoss"
+          },
+          "default": "squared_error",
+          "title": "Criterion",
+          "description": "Function to measure quality of split ('squared_error', 'absolute_error', 'friedman_mse', 'poisson')"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 0,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "feature_importances"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "n_estimators",
+        "max_depth",
+        "min_samples_split",
+        "min_samples_leaf",
+        "criterion",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "NMF",
+      "description": "Non-Negative Matrix Factorization.\n    machine learning, dimensionality reduction, feature extraction\n\n    Use cases:\n    - Topic modeling\n    - Source separation\n    - Feature extraction for non-negative data",
+      "namespace": "lib.ml.sklearn.decomposition",
+      "node_type": "lib.ml.sklearn.decomposition.NMF",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Non-negative features for decomposition"
+        },
+        {
+          "name": "n_components",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "N Components",
+          "description": "Number of components"
+        },
+        {
+          "name": "init",
+          "type": {
+            "type": "enum",
+            "values": [
+              "random",
+              "nndsvd",
+              "nndsvda",
+              "nndsvdar",
+              "custom"
+            ],
+            "type_name": "lib.ml.sklearn.decomposition.NMFInit"
+          },
+          "default": "random",
+          "title": "Init",
+          "description": "Method for initialization"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 0,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        },
+        {
+          "name": "max_iter",
+          "type": {
+            "type": "int"
+          },
+          "default": 200,
+          "title": "Max Iter",
+          "description": "Maximum number of iterations"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "transformed"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "components"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "n_components",
+        "init",
+        "random_state",
+        "max_iter"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "PCA",
+      "description": "Principal Component Analysis for dimensionality reduction.\n    machine learning, dimensionality reduction, feature extraction\n\n    Use cases:\n    - Dimensionality reduction\n    - Feature extraction\n    - Data visualization",
+      "namespace": "lib.ml.sklearn.decomposition",
+      "node_type": "lib.ml.sklearn.decomposition.PCA",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features for decomposition"
+        },
+        {
+          "name": "n_components",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "N Components",
+          "description": "Number of components to keep"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "transformed"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "components"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "explained_variance_ratio"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "n_components",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Truncated SVD",
+      "description": "Truncated Singular Value Decomposition (LSA).\n    machine learning, dimensionality reduction, feature extraction\n\n    Use cases:\n    - Text processing (LSA/LSI)\n    - Dimensionality reduction for sparse data\n    - Feature extraction",
+      "namespace": "lib.ml.sklearn.decomposition",
+      "node_type": "lib.ml.sklearn.decomposition.TruncatedSVD",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features for decomposition"
+        },
+        {
+          "name": "n_components",
+          "type": {
+            "type": "int"
+          },
+          "default": 2,
+          "title": "N Components",
+          "description": "Number of components"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        },
+        {
+          "name": "n_iter",
+          "type": {
+            "type": "int"
+          },
+          "default": 5,
+          "title": "N Iter",
+          "description": "Number of iterations for randomized SVD"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "transformed"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "components"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "explained_variance_ratio"
+        },
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "n_components",
+        "random_state",
+        "n_iter"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Linear SVMClassifier",
+      "description": "Linear Support Vector Machine Classifier.\n    machine learning, classification, svm, linear\n\n    Use cases:\n    - Large-scale classification\n    - Text classification\n    - High-dimensional data",
+      "namespace": "lib.ml.sklearn.svm",
+      "node_type": "lib.ml.sklearn.svm.LinearSVMClassifier",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "C",
+          "type": {
+            "type": "float"
+          },
+          "default": 1.0,
+          "title": "C",
+          "description": "Regularization parameter"
+        },
+        {
+          "name": "max_iter",
+          "type": {
+            "type": "int"
+          },
+          "default": 1000,
+          "title": "Max Iter",
+          "description": "Maximum number of iterations"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "C",
+        "max_iter",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "SVMClassifier",
+      "description": "Support Vector Machine Classifier with kernel.\n    machine learning, classification, svm\n\n    Use cases:\n    - Binary and multiclass classification\n    - Non-linear classification\n    - Text classification",
+      "namespace": "lib.ml.sklearn.svm",
+      "node_type": "lib.ml.sklearn.svm.SVMClassifier",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "C",
+          "type": {
+            "type": "float"
+          },
+          "default": 1.0,
+          "title": "C",
+          "description": "Regularization parameter"
+        },
+        {
+          "name": "kernel",
+          "type": {
+            "type": "str"
+          },
+          "default": "rbf",
+          "title": "Kernel",
+          "description": "Kernel type: 'linear', 'poly', 'rbf', 'sigmoid'"
+        },
+        {
+          "name": "degree",
+          "type": {
+            "type": "int"
+          },
+          "default": 3,
+          "title": "Degree",
+          "description": "Degree of polynomial kernel function"
+        },
+        {
+          "name": "gamma",
+          "type": {
+            "type": "float"
+          },
+          "default": "scale",
+          "title": "Gamma",
+          "description": "Kernel coefficient for 'rbf', 'poly' and 'sigmoid'"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "C",
+        "kernel",
+        "degree",
+        "gamma",
+        "random_state"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "SVMRegressor",
+      "description": "Support Vector Machine Regressor.\n    machine learning, regression, svm\n\n    Use cases:\n    - Non-linear regression\n    - Robust regression\n    - Time series prediction",
+      "namespace": "lib.ml.sklearn.svm",
+      "node_type": "lib.ml.sklearn.svm.SVMRegressor",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "C",
+          "type": {
+            "type": "float"
+          },
+          "default": 1.0,
+          "title": "C",
+          "description": "Regularization parameter"
+        },
+        {
+          "name": "kernel",
+          "type": {
+            "type": "str"
+          },
+          "default": "rbf",
+          "title": "Kernel",
+          "description": "Kernel type: 'linear', 'poly', 'rbf', 'sigmoid'"
+        },
+        {
+          "name": "degree",
+          "type": {
+            "type": "int"
+          },
+          "default": 3,
+          "title": "Degree",
+          "description": "Degree of polynomial kernel function"
+        },
+        {
+          "name": "gamma",
+          "type": {
+            "type": "float"
+          },
+          "default": "scale",
+          "title": "Gamma",
+          "description": "Kernel coefficient for 'rbf', 'poly' and 'sigmoid'"
+        },
+        {
+          "name": "epsilon",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.1,
+          "title": "Epsilon",
+          "description": "Epsilon in the epsilon-SVR model"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "C",
+        "kernel",
+        "degree",
+        "gamma",
+        "epsilon"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "GLM",
+      "description": "Generalized Linear Models using statsmodels.\n    machine learning, regression, generalized linear models\n\n    Use cases:\n    - Various types of regression (linear, logistic, poisson, etc.)\n    - Handling non-normal error distributions\n    - Complex regression analysis",
+      "namespace": "lib.ml.statsmodels.glm",
+      "node_type": "lib.ml.statsmodels.glm.GLM",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X Train",
+          "description": "Training features"
+        },
+        {
+          "name": "y_train",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y Train",
+          "description": "Training target values"
+        },
+        {
+          "name": "family",
+          "type": {
+            "type": "enum",
+            "values": [
+              "gaussian",
+              "binomial",
+              "poisson",
+              "gamma",
+              "inverse_gaussian"
+            ],
+            "type_name": "lib.ml.statsmodels.glm.GLMFamily"
+          },
+          "default": "gaussian",
+          "title": "Family",
+          "description": "Error distribution family"
+        },
+        {
+          "name": "link",
+          "type": {
+            "type": "enum",
+            "values": [
+              "identity",
+              "log",
+              "logit",
+              "probit",
+              "sqrt"
+            ],
+            "type_name": "lib.ml.statsmodels.glm.GLMLink"
+          },
+          "default": "identity",
+          "title": "Link",
+          "description": "Link function"
+        },
+        {
+          "name": "alpha",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.0,
+          "title": "Alpha",
+          "description": "L2 regularization parameter"
+        },
+        {
+          "name": "max_iter",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "Max Iter",
+          "description": "Maximum number of iterations"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "sklearn_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "params"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X_train",
+        "y_train",
+        "family",
+        "link",
+        "alpha",
+        "max_iter"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "GLMPredict",
+      "description": "Make predictions using a fitted GLM model.\n    machine learning, regression, prediction, generalized linear models\n\n    Use cases:\n    - Prediction with GLM models\n    - Out-of-sample prediction\n    - Model evaluation",
+      "namespace": "lib.ml.statsmodels.glm",
+      "node_type": "lib.ml.statsmodels.glm.GLMPredict",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "model",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "default": {},
+          "title": "Model",
+          "description": "Fitted GLM model"
+        },
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features to predict on"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "predictions"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "standard_errors"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "model",
+        "X"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "OLS",
+      "description": "Ordinary Least Squares Regression.\n    statistics, regression, linear model\n\n    Use cases:\n    - Linear regression analysis\n    - Statistical inference\n    - Hypothesis testing",
+      "namespace": "lib.ml.statsmodels.regression",
+      "node_type": "lib.ml.statsmodels.regression.OLS",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features/independent variables"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Target/dependent variable"
+        },
+        {
+          "name": "add_constant",
+          "type": {
+            "type": "bool"
+          },
+          "default": true,
+          "title": "Add Constant",
+          "description": "Add a constant term to the model"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "statsmodels_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "str"
+          },
+          "name": "summary"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "params"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "rsquared"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "rsquared_adj"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "fvalue"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "f_pvalue"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "y",
+        "add_constant"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "WLS",
+      "description": "Weighted Least Squares Regression.\n    statistics, regression, linear model, weighted\n\n    Use cases:\n    - Heteroscedastic data\n    - Varying observation reliability\n    - Weighted regression analysis",
+      "namespace": "lib.ml.statsmodels.regression",
+      "node_type": "lib.ml.statsmodels.regression.WLS",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features/independent variables"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Target/dependent variable"
+        },
+        {
+          "name": "weights",
+          "type": {
+            "type": "float"
+          },
+          "default": 1.0,
+          "title": "Weights",
+          "description": "Weights for observations"
+        },
+        {
+          "name": "add_constant",
+          "type": {
+            "type": "bool"
+          },
+          "default": true,
+          "title": "Add Constant",
+          "description": "Add a constant term to the model"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "statsmodels_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "str"
+          },
+          "name": "summary"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "params"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "rsquared"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "rsquared_adj"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "fvalue"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "f_pvalue"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "y",
+        "weights",
+        "add_constant"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Logit",
+      "description": "Logistic Regression using statsmodels.\n    statistics, regression, classification, logistic\n\n    Use cases:\n    - Binary classification\n    - Probability estimation\n    - Statistical inference for classification",
+      "namespace": "lib.ml.statsmodels.discrete",
+      "node_type": "lib.ml.statsmodels.discrete.Logit",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features/independent variables"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Binary target variable (0/1)"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "statsmodels_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "str"
+          },
+          "name": "summary"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "params"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "pvalues"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "pseudo_rsquared"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "y"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Multinomial Logit",
+      "description": "Multinomial Logistic Regression for nominal outcomes.\n    statistics, regression, multinomial, classification\n\n    Use cases:\n    - Multiple category classification\n    - Nominal categorical outcomes\n    - Choice modeling",
+      "namespace": "lib.ml.statsmodels.discrete",
+      "node_type": "lib.ml.statsmodels.discrete.MultinomialLogit",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features/independent variables"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Categorical target variable"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "statsmodels_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "str"
+          },
+          "name": "summary"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "params"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "pvalues"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "predicted_probs"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "y"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Negative Binomial",
+      "description": "Negative Binomial Regression for overdispersed count data.\n    statistics, regression, count-data, negative-binomial\n\n    Use cases:\n    - Overdispersed count data\n    - When variance exceeds mean\n    - More flexible than Poisson",
+      "namespace": "lib.ml.statsmodels.discrete",
+      "node_type": "lib.ml.statsmodels.discrete.NegativeBinomial",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features/independent variables"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Count data target variable"
+        },
+        {
+          "name": "exposure",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Exposure",
+          "description": "Optional exposure variable"
+        },
+        {
+          "name": "offset",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Offset",
+          "description": "Optional offset term"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "statsmodels_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "str"
+          },
+          "name": "summary"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "params"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "pvalues"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "predicted_counts"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "alpha"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "y",
+        "exposure",
+        "offset"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Poisson",
+      "description": "Poisson Regression for count data.\n    statistics, regression, count-data, poisson\n\n    Use cases:\n    - Modeling count data\n    - Rate data analysis\n    - Event frequency prediction",
+      "namespace": "lib.ml.statsmodels.discrete",
+      "node_type": "lib.ml.statsmodels.discrete.Poisson",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features/independent variables"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Count data target variable"
+        },
+        {
+          "name": "exposure",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Exposure",
+          "description": "Optional exposure variable"
+        },
+        {
+          "name": "offset",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Offset",
+          "description": "Optional offset term"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "statsmodels_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "str"
+          },
+          "name": "summary"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "params"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "pvalues"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "predicted_counts"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "y",
+        "exposure",
+        "offset"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Predict",
+      "description": "Make predictions using a fitted statsmodels model.\n    machine learning, prediction, regression\n\n    Use cases:\n    - Making predictions with fitted models\n    - Model inference\n    - Out-of-sample prediction",
+      "namespace": "lib.ml.statsmodels.__init__",
+      "node_type": "lib.ml.statsmodels.__init__.Predict",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "model",
+          "type": {
+            "type": "statsmodels_model"
+          },
+          "default": {},
+          "title": "Model",
+          "description": "Fitted statsmodels model"
+        },
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features to predict on"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "output"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "model",
+        "X"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Mixed LM",
+      "description": "Linear Mixed Effects Model.\n    statistics, regression, mixed effects, hierarchical model\n\n    Use cases:\n    - Hierarchical/nested data\n    - Repeated measures analysis\n    - Longitudinal data analysis\n    - Clustered data",
+      "namespace": "lib.ml.statsmodels.mixed",
+      "node_type": "lib.ml.statsmodels.mixed.MixedLM",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features/independent variables"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Target/dependent variable"
+        },
+        {
+          "name": "groups",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Groups",
+          "description": "Group labels for random effects"
+        },
+        {
+          "name": "use_reml",
+          "type": {
+            "type": "bool"
+          },
+          "default": true,
+          "title": "Use Reml",
+          "description": "Use REML estimation"
+        },
+        {
+          "name": "maxiter",
+          "type": {
+            "type": "int"
+          },
+          "default": 50,
+          "title": "Maxiter",
+          "description": "Maximum number of iterations"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "statsmodels_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "str"
+          },
+          "name": "summary"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "params"
+        },
+        {
+          "type": {
+            "type": "dict"
+          },
+          "name": "random_effects"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "aic"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "bic"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "llf"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "fe_params"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "bse_fe"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "cov_re"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "y",
+        "groups",
+        "use_reml",
+        "maxiter"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Mixed LMPredict",
+      "description": "Make predictions using a fitted Mixed Linear Model.\n    statistics, regression, prediction, mixed effects\n\n    Use cases:\n    - Prediction with mixed effects models\n    - Out-of-sample prediction\n    - Model evaluation",
+      "namespace": "lib.ml.statsmodels.mixed",
+      "node_type": "lib.ml.statsmodels.mixed.MixedLMPredict",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "model",
+          "type": {
+            "type": "statsmodels_model"
+          },
+          "default": {},
+          "title": "Model",
+          "description": "Fitted Mixed LM model"
+        },
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features for prediction"
+        },
+        {
+          "name": "groups",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Groups",
+          "description": "Group labels for prediction"
+        },
+        {
+          "name": "confidence_level",
+          "type": {
+            "type": "float"
+          },
+          "default": 0.95,
+          "title": "Confidence Level",
+          "description": "Confidence level for prediction intervals (between 0 and 1)"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "predictions"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "standard_errors"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "conf_intervals_lower"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "conf_intervals_upper"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "model",
+        "X",
+        "groups",
+        "confidence_level"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "RLM",
+      "description": "Robust Linear Model Regression.\n    statistics, regression, robust, outliers\n\n    Use cases:\n    - Regression with outliers\n    - Robust parameter estimation\n    - Non-normal error distributions",
+      "namespace": "lib.ml.statsmodels.robust",
+      "node_type": "lib.ml.statsmodels.robust.RLM",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Features/independent variables"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "Target/dependent variable"
+        },
+        {
+          "name": "M",
+          "type": {
+            "type": "enum",
+            "values": [
+              "huber",
+              "least_squares",
+              "andrew_wave",
+              "hampel",
+              "trimmed_mean",
+              "tukey_biweight"
+            ],
+            "type_name": "lib.ml.statsmodels.robust.MEstimator"
+          },
+          "default": "huber",
+          "title": "M",
+          "description": "M-estimator ('huber', 'bisquare', etc.)"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "statsmodels_model"
+          },
+          "name": "model"
+        },
+        {
+          "type": {
+            "type": "str"
+          },
+          "name": "summary"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "params"
+        },
+        {
+          "type": {
+            "type": "float"
+          },
+          "name": "rsquared"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "X",
+        "y",
+        "M"
+      ],
+      "is_dynamic": false
+    }
+  ]
+}

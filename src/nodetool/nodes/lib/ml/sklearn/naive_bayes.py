@@ -1,4 +1,3 @@
-from typing import Optional
 from pydantic import Field
 import pickle
 from sklearn.naive_bayes import GaussianNB, MultinomialNB, BernoulliNB
@@ -90,7 +89,7 @@ class BernoulliNBNode(BaseNode):
     fit_prior: bool = Field(
         default=True, description="Whether to learn class prior probabilities"
     )
-    binarize: Optional[float] = Field(
+    binarize: float = Field(
         default=0.0,
         description="Threshold for binarizing features (None for no binarization)",
     )

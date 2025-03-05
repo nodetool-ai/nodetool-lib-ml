@@ -1,5 +1,4 @@
 import enum
-from typing import Optional
 from pydantic import Field
 import pickle
 from sklearn.decomposition import PCA, NMF, TruncatedSVD
@@ -20,11 +19,9 @@ class PCANode(BaseNode):
     """
 
     X: NPArray = Field(default=NPArray(), description="Features for decomposition")
-    n_components: Optional[int] = Field(
-        default=None, description="Number of components to keep"
-    )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    n_components: int = Field(default=2, description="Number of components to keep")
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     @classmethod
@@ -49,14 +46,6 @@ class PCANode(BaseNode):
         }
 
 
-class NMFInit(str, enum.Enum):
-    RANDOM = "random"
-    NNDSVD = "nndsvd"
-    NNDSVDA = "nndsvda"
-    NNDSVDAR = "nndsvdar"
-    CUSTOM = "custom"
-
-
 class NMFNode(BaseNode):
     """
     Non-Negative Matrix Factorization.
@@ -67,6 +56,13 @@ class NMFNode(BaseNode):
     - Source separation
     - Feature extraction for non-negative data
     """
+
+    class NMFInit(str, enum.Enum):
+        RANDOM = "random"
+        NNDSVD = "nndsvd"
+        NNDSVDA = "nndsvda"
+        NNDSVDAR = "nndsvdar"
+        CUSTOM = "custom"
 
     X: NPArray = Field(
         default=NPArray(), description="Non-negative features for decomposition"
@@ -89,7 +85,7 @@ class NMFNode(BaseNode):
     async def process(self, context: ProcessingContext) -> dict:
         model = NMF(
             n_components=self.n_components,
-            init=self.init,
+            init=self.init.value,
             random_state=self.random_state,
             max_iter=self.max_iter,
         )
@@ -114,8 +110,8 @@ class TruncatedSVDNode(BaseNode):
 
     X: NPArray = Field(default=NPArray(), description="Features for decomposition")
     n_components: int = Field(default=2, description="Number of components")
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
     n_iter: int = Field(
         default=5, description="Number of iterations for randomized SVD"

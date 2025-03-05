@@ -1,5 +1,3 @@
-from enum import Enum
-from typing import Optional, List, Dict, Any
 from pydantic import Field
 import pandas as pd
 from sklearn import datasets
@@ -149,8 +147,8 @@ class MakeClassificationDataset(BaseNode):
     n_classes: int = Field(default=2, description="Number of classes")
     n_informative: int = Field(default=2, description="Number of informative features")
     n_redundant: int = Field(default=2, description="Number of redundant features")
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     @classmethod
@@ -191,8 +189,8 @@ class MakeRegressionDataset(BaseNode):
     noise: float = Field(
         default=0.1, description="Standard deviation of gaussian noise"
     )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     @classmethod
@@ -232,8 +230,8 @@ class MakeBlobsDataset(BaseNode):
     cluster_std: float = Field(
         default=1.0, description="Standard deviation of clusters"
     )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     @classmethod
@@ -271,8 +269,8 @@ class MakeMoonsDataset(BaseNode):
     noise: float = Field(
         default=0.1, description="Standard deviation of gaussian noise"
     )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     async def process(self, context: ProcessingContext):
@@ -302,8 +300,8 @@ class MakeCirclesDataset(BaseNode):
     factor: float = Field(
         default=0.8, description="Scale factor between inner and outer circle"
     )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     async def process(self, context: ProcessingContext):
@@ -402,8 +400,8 @@ class MakeClassificationDatasetDF(BaseNode):
     n_classes: int = Field(default=2, description="Number of classes")
     n_informative: int = Field(default=2, description="Number of informative features")
     n_redundant: int = Field(default=2, description="Number of redundant features")
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     async def process(self, context: ProcessingContext) -> DataframeRef:
@@ -436,8 +434,8 @@ class MakeRegressionDatasetDF(BaseNode):
     noise: float = Field(
         default=0.1, description="Standard deviation of gaussian noise"
     )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     async def process(self, context: ProcessingContext) -> DataframeRef:
@@ -469,8 +467,8 @@ class MakeBlobsDatasetDF(BaseNode):
     cluster_std: float = Field(
         default=1.0, description="Standard deviation of clusters"
     )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     async def process(self, context: ProcessingContext) -> DataframeRef:
@@ -500,8 +498,8 @@ class MakeMoonsDatasetDF(BaseNode):
     noise: float = Field(
         default=0.1, description="Standard deviation of gaussian noise"
     )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     async def process(self, context: ProcessingContext) -> DataframeRef:
@@ -530,8 +528,8 @@ class MakeCirclesDatasetDF(BaseNode):
     factor: float = Field(
         default=0.8, description="Scale factor between inner and outer circle"
     )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     async def process(self, context: ProcessingContext) -> DataframeRef:

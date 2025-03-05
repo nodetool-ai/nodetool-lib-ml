@@ -126,7 +126,7 @@ class LearningCurveNode(BaseNode):
     n_jobs: int = Field(
         default=None, description="Number of jobs for parallel processing"
     )
-    train_sizes: List[float] = Field(
+    train_sizes: list[float] = Field(
         default=[0.1, 0.3, 0.5, 0.7, 0.9],
         description="Points on the training learning curve",
     )

@@ -1,4 +1,4 @@
-from typing import Optional, Dict, Any, List
+from typing import Any
 from pydantic import Field
 import pickle
 import numpy as np
@@ -25,8 +25,8 @@ class TrainTestSplitNode(BaseNode):
         default=0.25,
         description="Proportion of the dataset to include in the test split",
     )
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
     shuffle: bool = Field(default=True, description="Whether to shuffle the data")
 
@@ -73,8 +73,8 @@ class KFoldCrossValidationNode(BaseNode):
     y: NPArray = Field(default=NPArray(), description="Target values")
     n_splits: int = Field(default=5, description="Number of folds")
     shuffle: bool = Field(default=True, description="Whether to shuffle the data")
-    random_state: Optional[int] = Field(
-        default=None, description="Random state for reproducibility"
+    random_state: int = Field(
+        default=42, description="Random state for reproducibility"
     )
 
     @classmethod
@@ -131,13 +131,13 @@ class GridSearchNode(BaseNode):
     )
     X: NPArray = Field(default=NPArray(), description="Training features")
     y: NPArray = Field(default=NPArray(), description="Training target values")
-    param_grid: dict[str, List[Any]] = Field(
+    param_grid: dict[str, list[Any]] = Field(
         default={},
         description="Dictionary with parameters names (string) as keys and lists of parameter settings to try",
     )
     cv: int = Field(default=5, description="Number of folds for cross-validation")
-    scoring: Optional[str] = Field(
-        default=None, description="Scoring metric to use for evaluation"
+    scoring: str = Field(
+        default="accuracy", description="Scoring metric to use for evaluation"
     )
 
     @classmethod
