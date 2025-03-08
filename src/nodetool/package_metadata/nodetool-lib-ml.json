@@ -5,6 +5,7 @@
   "authors": [
     "Matthias Georgi <matti.georgi@gmail.com>"
   ],
+  "repo_id": "nodetool-ai/nodetool-lib-ml",
   "nodes": [
     {
       "title": "Accuracy",
@@ -251,7 +252,7 @@
               "macro",
               "weighted"
             ],
-            "type_name": "lib.ml.sklearn.metrics.ClassificationMetricsAverage"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.metrics.ClassificationMetricsAverage"
           },
           "default": "binary",
           "title": "Average",
@@ -394,7 +395,7 @@
               "macro",
               "weighted"
             ],
-            "type_name": "lib.ml.sklearn.metrics.ClassificationMetricsAverage"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.metrics.ClassificationMetricsAverage"
           },
           "default": "binary",
           "title": "Average",
@@ -597,7 +598,7 @@
               "macro",
               "weighted"
             ],
-            "type_name": "lib.ml.sklearn.metrics.ClassificationMetricsAverage"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.metrics.ClassificationMetricsAverage"
           },
           "default": "binary",
           "title": "Average",
@@ -723,7 +724,7 @@
               "entropy",
               "log_loss"
             ],
-            "type_name": "lib.ml.sklearn.tree.DecisionTreeCriterion"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.tree.DecisionTreeCriterion"
           },
           "default": "gini",
           "title": "Criterion",
@@ -826,7 +827,7 @@
               "absolute_error",
               "poisson"
             ],
-            "type_name": "lib.ml.sklearn.tree.DecisionTreeRegressorCriterion"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.tree.DecisionTreeRegressorCriterion"
           },
           "default": "squared_error",
           "title": "Criterion",
@@ -899,7 +900,6 @@
           "type": {
             "type": "sklearn_model"
           },
-          "default": {},
           "title": "Estimator",
           "description": "Base estimator for feature selection"
         },
@@ -1210,7 +1210,7 @@
               "uniform",
               "distance"
             ],
-            "type_name": "lib.ml.sklearn.neighbors.KNNWeights"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.neighbors.KNNWeights"
           },
           "default": "uniform",
           "title": "Weights",
@@ -1226,7 +1226,7 @@
               "chebyshev",
               "minkowski"
             ],
-            "type_name": "lib.ml.sklearn.neighbors.KNNMetric"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.neighbors.KNNMetric"
           },
           "default": "euclidean",
           "title": "Metric",
@@ -1304,7 +1304,7 @@
               "uniform",
               "distance"
             ],
-            "type_name": "lib.ml.sklearn.neighbors.KNNWeights"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.neighbors.KNNWeights"
           },
           "default": "uniform",
           "title": "Weights",
@@ -1320,7 +1320,7 @@
               "chebyshev",
               "minkowski"
             ],
-            "type_name": "lib.ml.sklearn.neighbors.KNNMetric"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.neighbors.KNNMetric"
           },
           "default": "euclidean",
           "title": "Metric",
@@ -2690,16 +2690,20 @@
         {
           "name": "weights",
           "type": {
-            "type": "enum",
-            "values": [
-              "uniform",
-              "distance"
-            ],
-            "type_name": "lib.ml.sklearn.impute.Weights"
+            "type": "str"
           },
           "default": "uniform",
           "title": "Weights",
           "description": "Weight function used in prediction: 'uniform' or 'distance'"
+        },
+        {
+          "name": "metric",
+          "type": {
+            "type": "str"
+          },
+          "default": "nan_euclidean",
+          "title": "Metric",
+          "description": "Distance metric for searching neighbors"
         },
         {
           "name": "missing_values",
@@ -2739,6 +2743,7 @@
         "X",
         "n_neighbors",
         "weights",
+        "metric",
         "missing_values"
       ],
       "is_dynamic": false
@@ -3723,7 +3728,7 @@
               "average",
               "individual"
             ],
-            "type_name": "lib.ml.sklearn.inspection.PartialDependenceKind"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.inspection.PartialDependenceKind"
           },
           "default": "average",
           "title": "Kind",
@@ -3773,206 +3778,6 @@
         "lower_percentile",
         "upper_percentile",
         "kind"
-      ],
-      "is_dynamic": false
-    },
-    {
-      "title": "Partial Dependence",
-      "description": "Calculate Partial Dependence for features.\n    machine learning, model inspection, feature effects\n\n    Use cases:\n    - Feature impact visualization\n    - Model interpretation\n    - Understanding feature relationships",
-      "namespace": "lib.ml.sklearn.inspection",
-      "node_type": "lib.ml.sklearn.inspection.PartialDependence",
-      "layout": "default",
-      "properties": [
-        {
-          "name": "model",
-          "type": {
-            "type": "sklearn_model"
-          },
-          "default": {},
-          "title": "Model",
-          "description": "Fitted sklearn model"
-        },
-        {
-          "name": "X",
-          "type": {
-            "type": "np_array"
-          },
-          "default": {},
-          "title": "X",
-          "description": "Training data"
-        },
-        {
-          "name": "features",
-          "type": {
-            "type": "tuple",
-            "type_args": [
-              {
-                "type": "int"
-              }
-            ]
-          },
-          "title": "Features",
-          "description": "List of features for which to calculate PD. Each element can be an int for 1D PD or a list of 2 ints for 2D"
-        },
-        {
-          "name": "kind",
-          "type": {
-            "type": "enum",
-            "values": [
-              "average",
-              "individual"
-            ],
-            "type_name": "lib.ml.sklearn.inspection.PartialDependenceKind"
-          },
-          "default": "average",
-          "title": "Kind",
-          "description": "Kind of partial dependence result: 'average' or 'individual'"
-        },
-        {
-          "name": "grid_resolution",
-          "type": {
-            "type": "int"
-          },
-          "default": 100,
-          "title": "Grid Resolution",
-          "description": "Number of equally spaced points in the grid"
-        }
-      ],
-      "outputs": [
-        {
-          "type": {
-            "type": "list",
-            "type_args": [
-              {
-                "type": "np_array"
-              }
-            ]
-          },
-          "name": "pd_values"
-        },
-        {
-          "type": {
-            "type": "list",
-            "type_args": [
-              {
-                "type": "np_array"
-              }
-            ]
-          },
-          "name": "pd_positions"
-        }
-      ],
-      "the_model_info": {},
-      "recommended_models": [],
-      "basic_fields": [
-        "model",
-        "X",
-        "features",
-        "kind",
-        "grid_resolution"
-      ],
-      "is_dynamic": false
-    },
-    {
-      "title": "Permutation Importance",
-      "description": "Calculate Permutation Feature Importance.\n    machine learning, model inspection, feature importance\n\n    Use cases:\n    - Feature selection\n    - Model interpretation\n    - Identifying key predictors",
-      "namespace": "lib.ml.sklearn.inspection",
-      "node_type": "lib.ml.sklearn.inspection.PermutationImportance",
-      "layout": "default",
-      "properties": [
-        {
-          "name": "model",
-          "type": {
-            "type": "sklearn_model"
-          },
-          "default": {},
-          "title": "Model",
-          "description": "Fitted sklearn model"
-        },
-        {
-          "name": "X",
-          "type": {
-            "type": "np_array"
-          },
-          "default": {},
-          "title": "X",
-          "description": "Validation data"
-        },
-        {
-          "name": "y",
-          "type": {
-            "type": "np_array"
-          },
-          "default": {},
-          "title": "Y",
-          "description": "True labels/values"
-        },
-        {
-          "name": "n_repeats",
-          "type": {
-            "type": "int"
-          },
-          "default": 5,
-          "title": "N Repeats",
-          "description": "Number of times to permute each feature"
-        },
-        {
-          "name": "random_state",
-          "type": {
-            "type": "int"
-          },
-          "default": 42,
-          "title": "Random State",
-          "description": "Random state for reproducibility"
-        },
-        {
-          "name": "scoring",
-          "type": {
-            "type": "str"
-          },
-          "default": "accuracy",
-          "title": "Scoring",
-          "description": "Scoring metric (if None, uses estimator's default scorer)"
-        },
-        {
-          "name": "n_jobs",
-          "type": {
-            "type": "int"
-          },
-          "title": "N Jobs",
-          "description": "Number of jobs to run in parallel"
-        }
-      ],
-      "outputs": [
-        {
-          "type": {
-            "type": "np_array"
-          },
-          "name": "importances_mean"
-        },
-        {
-          "type": {
-            "type": "np_array"
-          },
-          "name": "importances_std"
-        },
-        {
-          "type": {
-            "type": "np_array"
-          },
-          "name": "importances"
-        }
-      ],
-      "the_model_info": {},
-      "recommended_models": [],
-      "basic_fields": [
-        "model",
-        "X",
-        "y",
-        "n_repeats",
-        "random_state",
-        "scoring",
-        "n_jobs"
       ],
       "is_dynamic": false
     },
@@ -4197,7 +4002,7 @@
               "average",
               "single"
             ],
-            "type_name": "lib.ml.sklearn.cluster.AgglomerativeClusteringLinkage"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.cluster.AgglomerativeClusteringLinkage"
           },
           "default": "ward",
           "title": "Linkage",
@@ -4455,7 +4260,7 @@
               "l2",
               "max"
             ],
-            "type_name": "lib.ml.sklearn.preprocessing.NormalizerNorm"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.preprocessing.NormalizerNorm"
           },
           "default": "max",
           "title": "Norm",
@@ -4843,7 +4648,7 @@
               "huber",
               "quantile"
             ],
-            "type_name": "lib.ml.sklearn.ensemble.GradientBoostingLoss"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.ensemble.GradientBoostingLoss"
           },
           "default": "squared_error",
           "title": "Loss",
@@ -4956,7 +4761,7 @@
               "gini",
               "entropy"
             ],
-            "type_name": "lib.ml.sklearn.ensemble.RandomForestCriterion"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.ensemble.RandomForestCriterion"
           },
           "default": "gini",
           "title": "Criterion",
@@ -5070,7 +4875,7 @@
               "friedman_mse",
               "poisson"
             ],
-            "type_name": "lib.ml.sklearn.ensemble.RandomForestLoss"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.ensemble.RandomForestLoss"
           },
           "default": "squared_error",
           "title": "Criterion",
@@ -5150,7 +4955,7 @@
               "nndsvdar",
               "custom"
             ],
-            "type_name": "lib.ml.sklearn.decomposition.NMFInit"
+            "type_name": "nodetool.nodes.lib.ml.sklearn.decomposition.NMFInit"
           },
           "default": "random",
           "title": "Init",
@@ -5648,7 +5453,7 @@
               "gamma",
               "inverse_gaussian"
             ],
-            "type_name": "lib.ml.statsmodels.glm.GLMFamily"
+            "type_name": "nodetool.nodes.lib.ml.statsmodels.glm.GLMFamily"
           },
           "default": "gaussian",
           "title": "Family",
@@ -5665,7 +5470,7 @@
               "probit",
               "sqrt"
             ],
-            "type_name": "lib.ml.statsmodels.glm.GLMLink"
+            "type_name": "nodetool.nodes.lib.ml.statsmodels.glm.GLMLink"
           },
           "default": "identity",
           "title": "Link",
@@ -6545,7 +6350,7 @@
               "trimmed_mean",
               "tukey_biweight"
             ],
-            "type_name": "lib.ml.statsmodels.robust.MEstimator"
+            "type_name": "nodetool.nodes.lib.ml.statsmodels.robust.MEstimator"
           },
           "default": "huber",
           "title": "M",

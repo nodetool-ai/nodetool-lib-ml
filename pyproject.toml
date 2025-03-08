@@ -10,6 +10,8 @@ readme = "README.md"
 authors = ["Matthias Georgi <matti.georgi@gmail.com>"]
 packages = [{ include = "nodetool", from = "src" }]
 package-mode = true
+repository = "https://github.com/nodetool-ai/nodetool-lib-ml"
+include = ["src/nodetool/package-metadata/nodetool-lib-ml.json"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
