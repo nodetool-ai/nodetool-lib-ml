@@ -900,6 +900,7 @@
           "type": {
             "type": "sklearn_model"
           },
+          "default": {},
           "title": "Estimator",
           "description": "Base estimator for feature selection"
         },
@@ -2690,20 +2691,16 @@
         {
           "name": "weights",
           "type": {
-            "type": "str"
+            "type": "enum",
+            "values": [
+              "uniform",
+              "distance"
+            ],
+            "type_name": "nodetool.nodes.lib.ml.sklearn.impute.Weights"
           },
           "default": "uniform",
           "title": "Weights",
           "description": "Weight function used in prediction: 'uniform' or 'distance'"
-        },
-        {
-          "name": "metric",
-          "type": {
-            "type": "str"
-          },
-          "default": "nan_euclidean",
-          "title": "Metric",
-          "description": "Distance metric for searching neighbors"
         },
         {
           "name": "missing_values",
@@ -2743,7 +2740,6 @@
         "X",
         "n_neighbors",
         "weights",
-        "metric",
         "missing_values"
       ],
       "is_dynamic": false
@@ -3778,6 +3774,206 @@
         "lower_percentile",
         "upper_percentile",
         "kind"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Partial Dependence",
+      "description": "Calculate Partial Dependence for features.\n    machine learning, model inspection, feature effects\n\n    Use cases:\n    - Feature impact visualization\n    - Model interpretation\n    - Understanding feature relationships",
+      "namespace": "lib.ml.sklearn.inspection",
+      "node_type": "lib.ml.sklearn.inspection.PartialDependence",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "model",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "default": {},
+          "title": "Model",
+          "description": "Fitted sklearn model"
+        },
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Training data"
+        },
+        {
+          "name": "features",
+          "type": {
+            "type": "tuple",
+            "type_args": [
+              {
+                "type": "int"
+              }
+            ]
+          },
+          "title": "Features",
+          "description": "List of features for which to calculate PD. Each element can be an int for 1D PD or a list of 2 ints for 2D"
+        },
+        {
+          "name": "kind",
+          "type": {
+            "type": "enum",
+            "values": [
+              "average",
+              "individual"
+            ],
+            "type_name": "nodetool.nodes.lib.ml.sklearn.inspection.PartialDependenceKind"
+          },
+          "default": "average",
+          "title": "Kind",
+          "description": "Kind of partial dependence result: 'average' or 'individual'"
+        },
+        {
+          "name": "grid_resolution",
+          "type": {
+            "type": "int"
+          },
+          "default": 100,
+          "title": "Grid Resolution",
+          "description": "Number of equally spaced points in the grid"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "list",
+            "type_args": [
+              {
+                "type": "np_array"
+              }
+            ]
+          },
+          "name": "pd_values"
+        },
+        {
+          "type": {
+            "type": "list",
+            "type_args": [
+              {
+                "type": "np_array"
+              }
+            ]
+          },
+          "name": "pd_positions"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "model",
+        "X",
+        "features",
+        "kind",
+        "grid_resolution"
+      ],
+      "is_dynamic": false
+    },
+    {
+      "title": "Permutation Importance",
+      "description": "Calculate Permutation Feature Importance.\n    machine learning, model inspection, feature importance\n\n    Use cases:\n    - Feature selection\n    - Model interpretation\n    - Identifying key predictors",
+      "namespace": "lib.ml.sklearn.inspection",
+      "node_type": "lib.ml.sklearn.inspection.PermutationImportance",
+      "layout": "default",
+      "properties": [
+        {
+          "name": "model",
+          "type": {
+            "type": "sklearn_model"
+          },
+          "default": {},
+          "title": "Model",
+          "description": "Fitted sklearn model"
+        },
+        {
+          "name": "X",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "X",
+          "description": "Validation data"
+        },
+        {
+          "name": "y",
+          "type": {
+            "type": "np_array"
+          },
+          "default": {},
+          "title": "Y",
+          "description": "True labels/values"
+        },
+        {
+          "name": "n_repeats",
+          "type": {
+            "type": "int"
+          },
+          "default": 5,
+          "title": "N Repeats",
+          "description": "Number of times to permute each feature"
+        },
+        {
+          "name": "random_state",
+          "type": {
+            "type": "int"
+          },
+          "default": 42,
+          "title": "Random State",
+          "description": "Random state for reproducibility"
+        },
+        {
+          "name": "scoring",
+          "type": {
+            "type": "str"
+          },
+          "default": "accuracy",
+          "title": "Scoring",
+          "description": "Scoring metric (if None, uses estimator's default scorer)"
+        },
+        {
+          "name": "n_jobs",
+          "type": {
+            "type": "int"
+          },
+          "title": "N Jobs",
+          "description": "Number of jobs to run in parallel"
+        }
+      ],
+      "outputs": [
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "importances_mean"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "importances_std"
+        },
+        {
+          "type": {
+            "type": "np_array"
+          },
+          "name": "importances"
+        }
+      ],
+      "the_model_info": {},
+      "recommended_models": [],
+      "basic_fields": [
+        "model",
+        "X",
+        "y",
+        "n_repeats",
+        "random_state",
+        "scoring",
+        "n_jobs"
       ],
       "is_dynamic": false
     },
@@ -6391,6 +6587,89 @@
         "M"
       ],
       "is_dynamic": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "lib.ml.sklearn_knn",
+      "name": "Sklearn KNN",
+      "description": "Example K-Nearest Neighbors workflow using scikit-learn",
+      "tags": [
+        "sklearn"
+      ],
+      "thumbnail_url": ""
+    },
+    {
+      "id": "lib.ml.sklearn_model_selection",
+      "name": "Sklearn Model Selection",
+      "description": "Example model selection workflow using scikit-learn",
+      "tags": [
+        "sklearn"
+      ],
+      "thumbnail_url": ""
+    },
+    {
+      "id": "sklearn_decision_tree",
+      "name": "Sklearn Decision Tree",
+      "description": "Example Decision Tree Classifier workflow using scikit-learn",
+      "tags": [
+        "sklearn"
+      ],
+      "thumbnail_url": ""
+    },
+    {
+      "id": "lib.ml.sklearn_nmf",
+      "name": "Sklearn NMF",
+      "description": "Example Non-negative Matrix Factorization workflow using scikit-learn",
+      "tags": [
+        "sklearn"
+      ],
+      "thumbnail_url": ""
+    },
+    {
+      "id": "lib.ml.sklearn_clustering",
+      "name": "Sklearn Clustering",
+      "description": "Example clustering workflow using scikit-learn",
+      "tags": [
+        "sklearn"
+      ],
+      "thumbnail_url": ""
+    },
+    {
+      "id": "lib.ml.sklearn_decision_tree_regression",
+      "name": "Sklearn Decision Tree Regression",
+      "description": "Example Decision Tree Regressor workflow using scikit-learn",
+      "tags": [
+        "sklearn"
+      ],
+      "thumbnail_url": ""
+    },
+    {
+      "id": "lib.ml.sklearn_pca",
+      "name": "Sklearn PCA",
+      "description": "Example PCA workflow using scikit-learn for dimensionality reduction",
+      "tags": [
+        "sklearn"
+      ],
+      "thumbnail_url": ""
+    },
+    {
+      "id": "lib.ml.sklearn_classifier",
+      "name": "Sklearn Classifier",
+      "description": "",
+      "tags": [
+        "sklearn"
+      ],
+      "thumbnail_url": ""
+    },
+    {
+      "id": "lib.ml.sklearn_regression",
+      "name": "Sklearn Regression",
+      "description": "Example regression workflow using scikit-learn",
+      "tags": [
+        "sklearn"
+      ],
+      "thumbnail_url": ""
     }
   ]
 }
