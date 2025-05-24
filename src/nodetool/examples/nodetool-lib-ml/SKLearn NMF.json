@@ -1,5 +1,5 @@
 {
-  "id": "lib.ml.sklearn_nmf",
+  "id": "lib.sklearn_nmf",
   "access": "public",
   "created_at": "2025-01-22T22:55:18.691877",
   "updated_at": "2025-01-22T22:55:18.691885",
@@ -15,7 +15,7 @@
       {
         "id": "1",
         "parent_id": null,
-        "type": "lib.ml.sklearn.datasets.MakeClassificationDataset",
+        "type": "lib.sklearn.datasets.MakeClassificationDataset",
         "data": {
           "n_samples": 100,
           "n_features": 20,
@@ -37,7 +37,7 @@
       {
         "id": "2",
         "parent_id": null,
-        "type": "lib.ml.sklearn.preprocessing.MinMaxScaler",
+        "type": "lib.sklearn.preprocessing.MinMaxScaler",
         "data": {
           "feature_range": [
             0,
@@ -58,7 +58,7 @@
       {
         "id": "3",
         "parent_id": null,
-        "type": "lib.ml.sklearn.decomposition.NMF",
+        "type": "lib.sklearn.decomposition.NMF",
         "data": {
           "n_components": 10,
           "init": "random",
@@ -79,7 +79,7 @@
       {
         "id": "4",
         "parent_id": null,
-        "type": "lib.ml.sklearn.visualization.NMFComponentsPlot",
+        "type": "lib.sklearn.visualization.NMFComponentsPlot",
         "data": {},
         "ui_properties": {
           "position": {

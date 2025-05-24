@@ -1,5 +1,5 @@
 {
-    "id": "lib.ml.sklearn_regression",
+    "id": "lib.sklearn_regression",
     "access": "public",
     "created_at": "2024-01-22T00:54:50.898246",
     "updated_at": "2024-01-22T00:54:50.898258",
@@ -12,7 +12,7 @@
         "nodes": [
             {
                 "id": "1",
-                "type": "lib.ml.sklearn.datasets.MakeRegressionDataset",
+                "type": "lib.sklearn.datasets.MakeRegressionDataset",
                 "position": {
                     "x": 100,
                     "y": 100
@@ -26,7 +26,7 @@
             },
             {
                 "id": "2",
-                "type": "lib.ml.sklearn.model_selection.TrainTestSplit",
+                "type": "lib.sklearn.model_selection.TrainTestSplit",
                 "position": {
                     "x": 300,
                     "y": 100
@@ -39,7 +39,7 @@
             },
             {
                 "id": "3",
-                "type": "lib.ml.sklearn.preprocessing.StandardScaler",
+                "type": "lib.sklearn.preprocessing.StandardScaler",
                 "position": {
                     "x": 500,
                     "y": 100
@@ -51,7 +51,7 @@
             },
             {
                 "id": "4",
-                "type": "lib.ml.sklearn.linear_model.RidgeRegression",
+                "type": "lib.sklearn.linear_model.RidgeRegression",
                 "position": {
                     "x": 700,
                     "y": 100
@@ -62,7 +62,7 @@
             },
             {
                 "id": "5",
-                "type": "lib.ml.sklearn.preprocessing.Transform",
+                "type": "lib.sklearn.preprocessing.Transform",
                 "position": {
                     "x": 500,
                     "y": 300
@@ -71,7 +71,7 @@
             },
             {
                 "id": "6",
-                "type": "lib.ml.sklearn.Predict",
+                "type": "lib.sklearn.Predict",
                 "position": {
                     "x": 700,
                     "y": 300
@@ -80,7 +80,7 @@
             },
             {
                 "id": "7",
-                "type": "lib.ml.sklearn.metrics.R2",
+                "type": "lib.sklearn.metrics.R2",
                 "position": {
                     "x": 900,
                     "y": 200

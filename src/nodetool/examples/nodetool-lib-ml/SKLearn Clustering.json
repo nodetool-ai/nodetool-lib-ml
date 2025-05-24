@@ -1,5 +1,5 @@
 {
-  "id": "lib.ml.sklearn_clustering",
+  "id": "lib.sklearn_clustering",
   "access": "public",
   "created_at": "2025-01-22T22:50:55.179458",
   "updated_at": "2025-01-22T22:50:55.179472",
@@ -15,7 +15,7 @@
       {
         "id": "1",
         "parent_id": null,
-        "type": "lib.ml.sklearn.datasets.MakeBlobsDataset",
+        "type": "lib.sklearn.datasets.MakeBlobsDataset",
         "data": {
           "n_samples": 300,
           "n_features": 2,
@@ -37,7 +37,7 @@
       {
         "id": "2",
         "parent_id": null,
-        "type": "lib.ml.sklearn.preprocessing.StandardScaler",
+        "type": "lib.sklearn.preprocessing.StandardScaler",
         "data": {},
         "ui_properties": {
           "position": {
@@ -53,7 +53,7 @@
       {
         "id": "3",
         "parent_id": null,
-        "type": "lib.ml.sklearn.cluster.KMeans",
+        "type": "lib.sklearn.cluster.KMeans",
         "data": {
           "n_clusters": 3,
           "random_state": 42,
@@ -73,7 +73,7 @@
       {
         "id": "4",
         "parent_id": null,
-        "type": "lib.ml.sklearn.metrics.SilhouetteScore",
+        "type": "lib.sklearn.metrics.SilhouetteScore",
         "data": {},
         "ui_properties": {
           "position": {
@@ -89,7 +89,7 @@
       {
         "id": "5",
         "parent_id": null,
-        "type": "lib.ml.sklearn.visualization.ClusterVisualization",
+        "type": "lib.sklearn.visualization.ClusterVisualization",
         "data": {},
         "ui_properties": {
           "position": {

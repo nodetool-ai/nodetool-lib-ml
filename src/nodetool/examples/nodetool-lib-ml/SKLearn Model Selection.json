@@ -1,5 +1,5 @@
 {
-    "id": "lib.ml.sklearn_model_selection",
+    "id": "lib.sklearn_model_selection",
     "access": "public",
     "created_at": "2025-01-22T23:59:02.328672",
     "updated_at": "2025-01-22T23:59:02.328685",
@@ -15,7 +15,7 @@
             {
                 "id": "1",
                 "parent_id": null,
-                "type": "lib.ml.sklearn.datasets.MakeClassificationDataset",
+                "type": "lib.sklearn.datasets.MakeClassificationDataset",
                 "data": {},
                 "ui_properties": {
                     "selected": false,
@@ -32,7 +32,7 @@
             {
                 "id": "2",
                 "parent_id": null,
-                "type": "lib.ml.sklearn.model_selection.TrainTestSplit",
+                "type": "lib.sklearn.model_selection.TrainTestSplit",
                 "data": {},
                 "ui_properties": {
                     "selected": false,
@@ -49,7 +49,7 @@
             {
                 "id": "3",
                 "parent_id": null,
-                "type": "lib.ml.sklearn.svm.SVMClassifier",
+                "type": "lib.sklearn.svm.SVMClassifier",
                 "data": {},
                 "ui_properties": {
                     "selected": false,
@@ -66,7 +66,7 @@
             {
                 "id": "4",
                 "parent_id": null,
-                "type": "lib.ml.sklearn.model_selection.GridSearch",
+                "type": "lib.sklearn.model_selection.GridSearch",
                 "data": {},
                 "ui_properties": {
                     "selected": false,
@@ -83,7 +83,7 @@
             {
                 "id": "5",
                 "parent_id": null,
-                "type": "lib.ml.sklearn.visualization.DecisionBoundaryPlot",
+                "type": "lib.sklearn.visualization.DecisionBoundaryPlot",
                 "data": {
                     "mesh_step_size": 0.02,
                     "dim1": 0,
@@ -211,7 +211,7 @@
                 "target": "5",
                 "targetHandle": "model",
                 "ui_properties": {
-                    "className": "lib.ml.sklearn_model"
+                    "className": "lib.sklearn_model"
                 }
             },
             {

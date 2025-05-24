@@ -1,5 +1,5 @@
 {
-  "id": "lib.ml.sklearn_knn",
+  "id": "lib.sklearn_knn",
   "access": "public",
   "created_at": "2025-01-22T22:42:03.475854",
   "updated_at": "2025-01-22T22:42:03.475917",
@@ -15,7 +15,7 @@
       {
         "id": "1",
         "parent_id": null,
-        "type": "lib.ml.sklearn.datasets.LoadIrisDataset",
+        "type": "lib.sklearn.datasets.LoadIrisDataset",
         "data": {},
         "ui_properties": {
           "position": {
@@ -31,7 +31,7 @@
       {
         "id": "2",
         "parent_id": null,
-        "type": "lib.ml.sklearn.model_selection.TrainTestSplit",
+        "type": "lib.sklearn.model_selection.TrainTestSplit",
         "data": {
           "test_size": 0.2,
           "random_state": 42,
@@ -51,7 +51,7 @@
       {
         "id": "3",
         "parent_id": null,
-        "type": "lib.ml.sklearn.preprocessing.StandardScaler",
+        "type": "lib.sklearn.preprocessing.StandardScaler",
         "data": {
           "with_mean": true,
           "with_std": true
@@ -70,7 +70,7 @@
       {
         "id": "4",
         "parent_id": null,
-        "type": "lib.ml.sklearn.neighbors.KNNClassifier",
+        "type": "lib.sklearn.neighbors.KNNClassifier",
         "data": {
           "n_neighbors": 5,
           "weights": "uniform",
@@ -91,7 +91,7 @@
       {
         "id": "5",
         "parent_id": null,
-        "type": "lib.ml.sklearn.metrics.Accuracy",
+        "type": "lib.sklearn.metrics.Accuracy",
         "data": {},
         "ui_properties": {
           "position": {
@@ -107,7 +107,7 @@
       {
         "id": "6",
         "parent_id": null,
-        "type": "lib.ml.sklearn.Predict",
+        "type": "lib.sklearn.Predict",
         "data": {},
         "ui_properties": {
           "position": {
@@ -161,7 +161,7 @@
       {
         "id": "12",
         "parent_id": null,
-        "type": "lib.ml.sklearn.visualization.DecisionBoundaryPlot",
+        "type": "lib.sklearn.visualization.DecisionBoundaryPlot",
         "data": {
           "mesh_step_size": 0.02,
           "dim1": 1,
@@ -247,7 +247,7 @@
         "target": "6",
         "targetHandle": "model",
         "ui_properties": {
-          "className": "lib.ml.sklearn_model"
+          "className": "lib.sklearn_model"
         }
       },
       {
@@ -307,7 +307,7 @@
         "target": "12",
         "targetHandle": "model",
         "ui_properties": {
-          "className": "lib.ml.sklearn_model"
+          "className": "lib.sklearn_model"
         }
       },
       {

@@ -15,7 +15,7 @@
             {
                 "id": "1",
                 "parent_id": null,
-                "type": "lib.ml.sklearn.datasets.MakeClassificationDataset",
+                "type": "lib.sklearn.datasets.MakeClassificationDataset",
                 "data": {
                     "n_samples": 100,
                     "n_features": 2,
@@ -39,7 +39,7 @@
             {
                 "id": "2",
                 "parent_id": null,
-                "type": "lib.ml.sklearn.model_selection.TrainTestSplit",
+                "type": "lib.sklearn.model_selection.TrainTestSplit",
                 "data": {
                     "test_size": 0.2,
                     "random_state": 42,
@@ -60,7 +60,7 @@
             {
                 "id": "3",
                 "parent_id": null,
-                "type": "lib.ml.sklearn.tree.DecisionTreeClassifier",
+                "type": "lib.sklearn.tree.DecisionTreeClassifier",
                 "data": {
                     "max_depth": 3,
                     "min_samples_split": 2,
@@ -82,7 +82,7 @@
             {
                 "id": "4",
                 "parent_id": null,
-                "type": "lib.ml.sklearn.visualization.DecisionBoundaryPlot",
+                "type": "lib.sklearn.visualization.DecisionBoundaryPlot",
                 "data": {
                     "dim1": 0,
                     "dim2": 1,
@@ -103,7 +103,7 @@
             {
                 "id": "6",
                 "parent_id": null,
-                "type": "lib.ml.sklearn.visualization.ConfusionMatrixPlot",
+                "type": "lib.sklearn.visualization.ConfusionMatrixPlot",
                 "data": {},
                 "ui_properties": {
                     "selected": false,
@@ -140,7 +140,7 @@
             {
                 "id": "8",
                 "parent_id": null,
-                "type": "lib.ml.sklearn.Predict",
+                "type": "lib.sklearn.Predict",
                 "data": {},
                 "ui_properties": {
                     "selected": false,
@@ -253,7 +253,7 @@
                 "target": "8",
                 "targetHandle": "model",
                 "ui_properties": {
-                    "className": "lib.ml.sklearn_model"
+                    "className": "lib.sklearn_model"
                 }
             },
             {
@@ -263,7 +263,7 @@
                 "target": "4",
                 "targetHandle": "model",
                 "ui_properties": {
-                    "className": "lib.ml.sklearn_model"
+                    "className": "lib.sklearn_model"
                 }
             },
             {
