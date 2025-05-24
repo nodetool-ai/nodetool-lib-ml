@@ -123,9 +123,7 @@ class LearningCurveNode(BaseNode):
     X: NPArray = Field(default=NPArray(), description="Training features")
     y: NPArray = Field(default=NPArray(), description="Training labels")
     cv: int = Field(default=5, description="Number of cross-validation folds")
-    n_jobs: int = Field(
-        default=None, description="Number of jobs for parallel processing"
-    )
+    n_jobs: int = Field(default=1, description="Number of jobs for parallel processing")
     train_sizes: list[float] = Field(
         default=[0.1, 0.3, 0.5, 0.7, 0.9],
         description="Points on the training learning curve",
@@ -358,6 +356,80 @@ class RegressionResidualPlotNode(BaseNode):
         ax2.grid(True)
 
         plt.tight_layout()
+
+        buf = BytesIO()
+        fig.savefig(buf, format="png", bbox_inches="tight")
+        buf.seek(0)
+        plt.close(fig)
+
+        return await context.image_from_pil(Image.open(buf))
+
+
+class RegressionPlot(BaseNode):
+    """
+    Create a scatter plot with optional regression line.
+    machine learning, visualization, regression, scatter plot
+
+    Use cases:
+    - Visualize feature-target relationships
+    - Explore linear correlations
+    - Show regression line fit
+    - Data distribution analysis
+    """
+
+    X: NPArray = Field(default=NPArray(), description="Feature values (1D)")
+    y: NPArray = Field(default=NPArray(), description="Target values")
+    show_regression_line: bool = Field(
+        default=True, description="Whether to show the regression line"
+    )
+    x_label: str = Field(default="Feature", description="X-axis label")
+    y_label: str = Field(default="Target", description="Y-axis label")
+    title: str = Field(default="Regression Plot", description="Plot title")
+
+    async def process(self, context: ProcessingContext) -> ImageRef:
+        if self.X.is_set() and self.y.is_set():
+            X_data = self.X.to_numpy()
+            y_data = self.y.to_numpy()
+        else:
+            raise ValueError("X or y is not set")
+
+        # Ensure X is 1D for this visualization
+        if X_data.ndim > 1:
+            if X_data.shape[1] == 1:
+                X_data = X_data.flatten()
+            else:
+                raise ValueError(
+                    "X must be 1-dimensional. Use first column of multi-dimensional data or select a specific feature."
+                )
+
+        fig, ax = plt.subplots(figsize=(10, 6))
+
+        # Create scatter plot
+        ax.scatter(X_data, y_data, alpha=0.6, edgecolors="black", linewidth=0.5)
+
+        # Add regression line if requested
+        if self.show_regression_line:
+            # Calculate regression line using numpy polyfit
+            coeffs = np.polyfit(X_data, y_data, 1)
+            poly_func = np.poly1d(coeffs)
+
+            # Generate points for smooth line
+            x_line = np.linspace(X_data.min(), X_data.max(), 100)
+            y_line = poly_func(x_line)
+
+            ax.plot(
+                x_line,
+                y_line,
+                "r-",
+                linewidth=2,
+                label=f"y = {coeffs[0]:.3f}x + {coeffs[1]:.3f}",
+            )
+            ax.legend()
+
+        ax.set_xlabel(self.x_label)
+        ax.set_ylabel(self.y_label)
+        ax.set_title(self.title)
+        ax.grid(True, alpha=0.3)
 
         buf = BytesIO()
         fig.savefig(buf, format="png", bbox_inches="tight")

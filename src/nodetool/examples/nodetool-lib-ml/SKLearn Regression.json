@@ -71,7 +71,7 @@
             },
             {
                 "id": "6",
-                "type": "lib.ml.sklearn.Predict.Predict",
+                "type": "lib.ml.sklearn.Predict",
                 "position": {
                     "x": 700,
                     "y": 300
@@ -80,7 +80,7 @@
             },
             {
                 "id": "7",
-                "type": "lib.ml.sklearn.metrics.RS",
+                "type": "lib.ml.sklearn.metrics.R2",
                 "position": {
                     "x": 900,
                     "y": 200
