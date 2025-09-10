@@ -1,26 +1,43 @@
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry]
+[project]
 name = "nodetool-lib-ml"
 version = "0.6.0"
 description = "Nodetool ML nodes"
 readme = "README.md"
-authors = ["Matthias Georgi <matti.georgi@gmail.com>"]
-packages = [{ include = "nodetool", from = "src" }]
-package-mode = true
-repository = "https://github.com/nodetool-ai/nodetool-lib-ml"
-include = ["src/nodetool/package_metadata/nodetool-lib-ml.json"]
+authors = [
+    {name = "Matthias Georgi", email = "matti.georgi@gmail.com"}
+]
+requires-python = ">=3.11"
 
-[tool.poetry.dependencies]
-python = "^3.11"
-nodetool-core = { git = "https://github.com/nodetool-ai/nodetool-core.git", rev = "main" }
+dependencies = [
+    "nodetool-core>=0.6.0,<0.7.0",
+    # ML dependencies
+    "scipy==1.15.2",
+    "scikit-learn==1.6.1",
+    "statsmodels==0.14.4",
+]
 
-# Media dependencies
-scipy = "1.15.2"
-scikit-learn = "1.6.1"
-statsmodels = "0.14.4"
+[project.optional-dependencies]
+# For development with local nodetool-core
+dev = [
+    "nodetool-core @ file:///../nodetool-core",
+]
+# For exact version pinning in production
+stable = [
+    "nodetool-core==0.6.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nodetool"]
+artifacts = [
+    "src/nodetool/package_metadata/nodetool-lib-ml.json",
+]
 
 [tool.ruff]
 target-version = "py311"
