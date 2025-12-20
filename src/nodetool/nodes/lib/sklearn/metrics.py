@@ -1,5 +1,5 @@
 import enum
-from typing import Optional, List
+from typing import Optional, List, TypedDict
 from pydantic import Field
 import numpy as np
 from sklearn import metrics
@@ -31,16 +31,13 @@ class ROCCurveNode(BaseNode):
         default=NPArray(), description="Predicted probabilities or scores"
     )
 
-    @classmethod
-    def return_type(cls):
-        return {
-            "fpr": NPArray,
-            "tpr": NPArray,
-            "thresholds": NPArray,
-            "auc": float,
-        }
+    class OutputType(TypedDict):
+        fpr: NPArray
+        tpr: NPArray
+        thresholds: NPArray
+        auc: float
 
-    async def process(self, context: ProcessingContext) -> dict:
+    async def process(self, context: ProcessingContext) -> "ROCCurveNode.OutputType":
         y_true = self.y_true.to_numpy()
         y_score = self.y_score.to_numpy()
 
