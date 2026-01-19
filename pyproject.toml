@@ -4,14 +4,14 @@ build-backend = "hatchling.build"
 
 [project]
 name = "nodetool-lib-ml"
-version = "0.6.2-rc.27"
+version = "0.6.2-rc.28"
 description = "Nodetool ML nodes"
 readme = "README.md"
 authors = [{ name = "Matthias Georgi", email = "matti.georgi@gmail.com" }]
 requires-python = ">=3.11"
 
 dependencies = [
-    "nodetool-core==0.6.2-rc.27",
+    "nodetool-core==0.6.2-rc.28",
     # ML dependencies
     "scipy==1.15.2",
     "scikit-learn==1.6.1",
@@ -20,7 +20,7 @@ dependencies = [
 
 [project.optional-dependencies]
 # For exact version pinning in production
-stable = ["nodetool-core==0.6.2-rc.27"]
+stable = ["nodetool-core==0.6.2-rc.28"]
 
 [tool.hatch.metadata]
 
