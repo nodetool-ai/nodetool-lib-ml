@@ -18,7 +18,7 @@ async def test_decision_tree_classifier():
         np.array([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]], dtype=float)
     )
     y_train = NPArray.from_numpy(np.array([0, 0, 1, 1, 1]))
-    
+
     node = DecisionTreeClassifierNode(
         X_train=X_train,
         y_train=y_train,
@@ -27,10 +27,10 @@ async def test_decision_tree_classifier():
         random_state=42,
     )
     result = await node.process(ctx)
-    
+
     assert result["model"] is not None
     assert result["feature_importances"] is not None
-    
+
     importances = result["feature_importances"].to_numpy()
     assert len(importances) == 2  # 2 features
 
@@ -40,7 +40,7 @@ async def test_decision_tree_classifier_entropy():
     ctx = ProcessingContext()
     X_train = NPArray.from_numpy(np.array([[1], [2], [3], [4]], dtype=float))
     y_train = NPArray.from_numpy(np.array([0, 0, 1, 1]))
-    
+
     node = DecisionTreeClassifierNode(
         X_train=X_train,
         y_train=y_train,
@@ -48,7 +48,7 @@ async def test_decision_tree_classifier_entropy():
         random_state=42,
     )
     result = await node.process(ctx)
-    
+
     assert result["model"] is not None
 
 
@@ -57,7 +57,7 @@ async def test_decision_tree_regressor():
     ctx = ProcessingContext()
     X_train = NPArray.from_numpy(np.array([[1], [2], [3], [4], [5]], dtype=float))
     y_train = NPArray.from_numpy(np.array([2.0, 4.0, 6.0, 8.0, 10.0]))
-    
+
     node = DecisionTreeRegressorNode(
         X_train=X_train,
         y_train=y_train,
@@ -65,9 +65,9 @@ async def test_decision_tree_regressor():
         random_state=42,
     )
     result = await node.process(ctx)
-    
+
     assert result["model"] is not None
     assert result["feature_importances"] is not None
-    
+
     importances = result["feature_importances"].to_numpy()
     assert len(importances) == 1  # 1 feature

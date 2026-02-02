@@ -20,7 +20,7 @@ async def test_random_forest_classifier():
         np.array([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12]], dtype=float)
     )
     y_train = NPArray.from_numpy(np.array([0, 0, 0, 1, 1, 1]))
-    
+
     node = RandomForestClassifierNode(
         X_train=X_train,
         y_train=y_train,
@@ -29,10 +29,10 @@ async def test_random_forest_classifier():
         random_state=42,
     )
     result = await node.process(ctx)
-    
+
     assert result["model"] is not None
     assert result["feature_importances"] is not None
-    
+
     importances = result["feature_importances"].to_numpy()
     assert len(importances) == 2  # 2 features
 
@@ -40,11 +40,9 @@ async def test_random_forest_classifier():
 @pytest.mark.asyncio
 async def test_random_forest_regressor():
     ctx = ProcessingContext()
-    X_train = NPArray.from_numpy(
-        np.array([[1], [2], [3], [4], [5], [6]], dtype=float)
-    )
+    X_train = NPArray.from_numpy(np.array([[1], [2], [3], [4], [5], [6]], dtype=float))
     y_train = NPArray.from_numpy(np.array([2.0, 4.0, 6.0, 8.0, 10.0, 12.0]))
-    
+
     node = RandomForestRegressorNode(
         X_train=X_train,
         y_train=y_train,
@@ -52,7 +50,7 @@ async def test_random_forest_regressor():
         random_state=42,
     )
     result = await node.process(ctx)
-    
+
     assert result["model"] is not None
     assert result["feature_importances"] is not None
 
@@ -64,7 +62,7 @@ async def test_gradient_boosting_classifier():
         np.array([[1, 2], [3, 4], [5, 6], [7, 8]], dtype=float)
     )
     y_train = NPArray.from_numpy(np.array([0, 0, 1, 1]))
-    
+
     node = GradientBoostingClassifierNode(
         X_train=X_train,
         y_train=y_train,
@@ -74,10 +72,10 @@ async def test_gradient_boosting_classifier():
         random_state=42,
     )
     result = await node.process(ctx)
-    
+
     assert result["model"] is not None
     assert result["feature_importances"] is not None
-    
+
     importances = result["feature_importances"].to_numpy()
     assert len(importances) == 2
 
@@ -87,7 +85,7 @@ async def test_gradient_boosting_regressor():
     ctx = ProcessingContext()
     X_train = NPArray.from_numpy(np.array([[1], [2], [3], [4], [5]], dtype=float))
     y_train = NPArray.from_numpy(np.array([2.0, 4.0, 6.0, 8.0, 10.0]))
-    
+
     node = GradientBoostingRegressorNode(
         X_train=X_train,
         y_train=y_train,
@@ -96,6 +94,6 @@ async def test_gradient_boosting_regressor():
         random_state=42,
     )
     result = await node.process(ctx)
-    
+
     assert result["model"] is not None
     assert result["feature_importances"] is not None
