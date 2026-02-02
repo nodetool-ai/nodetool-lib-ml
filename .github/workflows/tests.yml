@@ -23,10 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv sync \
+          uv sync --extra dev \
             --extra-index-url https://nodetool-ai.github.io/nodetool-registry/simple/ \
             --index-strategy unsafe-best-match
-          uv sync --extra dev --index-strategy unsafe-best-match
 
       - name: Run tests
         run: uv run pytest
