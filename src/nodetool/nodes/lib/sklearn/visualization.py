@@ -566,7 +566,7 @@ class PlotTSNE(BaseNode):
             learning_rate=200,
         )
         vis_dims = tsne.fit_transform(matrix)
-        (fig, ax) = plt.subplots()
+        fig, ax = plt.subplots()
         data = {"x": [x for (x, y) in vis_dims], "y": [y for (x, y) in vis_dims]}
         sns.scatterplot(
             data=data,
